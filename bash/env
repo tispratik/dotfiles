@@ -1,0 +1,14 @@
+# Update the command prompt to be <user>:<current_directory>(git_branch) >
+# Note that the git branch is given a special color
+
+if [ `uname` == 'Darwin' ]; then
+  # We need gui support for plugins
+  export EDITOR="mvim -v"
+fi
+
+# Red prompt for root
+if [ $(id -u) = "0" ]; then
+  PS1="$RED\n\u@\h:\w \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \n→ $RED"  
+else
+  PS1="\n\u@\h:\w \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \n→ "
+fi

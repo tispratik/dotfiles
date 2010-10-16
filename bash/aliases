@@ -1,0 +1,201 @@
+# File Modifications
+# ------------------
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+# -> Prevents accidentally clobbering files.
+
+# Disk Utility
+# ------------
+alias du='du -h'
+alias df='df -kh'
+
+# The 'ls' family
+# ---------------
+alias ls='ls -hF --color'	# add colors for filetype recognition
+alias lx='ls -lXB'		# sort by extension
+alias lk='ls -lSr'		# sort by size
+alias l='ls -Al'		# show hidden files
+alias ll='ls -lh'               # -l long listing, human readable
+alias lt='ls -ltr'		# sort by date
+alias lm='ls -al |more'		# pipe through 'more'
+
+# spelling typos
+# --------------
+alias xs='cd'
+alias vf='cd'
+alias moer='more'
+alias moew='more'
+alias kk='ll'
+
+# Other
+# -----
+alias h='history'
+alias j='jobs -l'
+alias path='echo -e ${PATH//:/\\n}'
+alias c='clear; ls'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias reload='source ~/bin/dotfiles/bash/aliases'
+alias md='mkdir -p'
+alias e='exit'
+alias kb="kill -9 %1 %2"
+alias grep='grep --color=auto'   # Color found text
+
+# Quicker cd
+# ----------
+alias cdd='cd -'  # goto last dir cd'ed from
+
+function cdh() {
+ cd ~/AptanaWorkspace/$*
+}
+
+function cdc() { 
+    cd $1; ls 
+}
+
+# mkdir and cd into it
+function take() { 
+    mkdir -p "$1"
+    cd "$1" 
+}
+
+# Processes
+# ---------
+alias tu='top -o cpu' # cpu
+alias tm='top -o vsize' # memory
+function my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ; }
+function pp() { my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"} ; }
+
+# Git
+# ---
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
+alias gb='git branch'
+alias gba='git branch -a'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+# Commit pending changes and quote all args as message
+function gg() { 
+    git commit -v -a -m "$*"
+}
+# Commit pending changes and quote all args as message and then push to remote repo
+function gg() { 
+    git commit -v -a -m "$*"; git push
+}
+alias gco='git checkout'
+alias gd='git diff'
+alias gdm='git diff master'
+alias gl='git pull'
+alias gp='git push'
+alias gst='git status'
+alias gt='git status'
+alias g='git status'
+alias s='git status'
+alias gconf='cat .git/config'
+# Git clone from GitHub
+function gch() {
+  git clone git://github.com/$USER/$1.git
+}
+
+# Setup a tracking branch from [remote] [branch_name]
+function gbt() { 
+  git branch --track $2 $1/$2 && git checkout $2 
+}
+# Quickly clobber a file and checkout
+function grf() { 
+  rm $1
+  git checkout $1 
+}
+# Call from inside an initialized Git repo, with the name of the repo.
+function new-git() {
+  ssh git@example.com "mkdir $1.git && cd $1.git && git --bare init"
+  git remote add origin git@example.com:$1.git
+  git push origin master
+  git config branch.master.remote origin
+  git config branch.master.merge refs/heads/master
+  git config push.default current
+}
+
+# Ruby
+# ----
+alias r="rake"
+
+# Rails
+# -----
+alias sc='./script/console'
+alias sg='./script/generate'
+alias sp='./script/plugin'
+alias ss='./script/server'
+alias ts='thin start'
+
+# TDD / BDD
+# ---------
+alias aa='autotest'
+alias aaf='autotest -f' # Don't run all at start
+alias aas="./script/autospec"
+
+# Nginx
+# -----
+function nginx_stop() {
+    ps ax | grep nginx | cut -d " " -f 1 | xargs sudo kill -9
+}
+function nginx_start() {
+    sudo /opt/nginx/sbin/nginx
+}
+
+# From http://github.com/suztomo/dotfiles
+# ---------------------------------------
+function rmf(){
+    for file in $*
+    do
+        __rm_single_file $file
+    done
+}
+
+function __rm_single_file(){
+    if ! [ -d ~/.Trash/ ]
+    then
+        command /bin/mkdir ~/.Trash
+    fi
+
+    if ! [ $# -eq 1 ]
+    then
+        echo "__rm_single_file: 1 argument required but $# passed."
+        exit
+    fi
+
+    if [ -e $1 ]
+    then
+        BASENAME=`basename $1`
+        NAME=$BASENAME
+        COUNT=0
+        while [ -e ~/.Trash/$NAME ]
+        do
+            COUNT=$(($COUNT+1))
+            NAME="$BASENAME.$COUNT"
+        done
+
+        command /bin/mv $1 ~/.Trash/$NAME
+    else
+        echo "No such file or directory: $file"
+    fi
+}
+
+# File & strings related functions
+# --------------------------------
+function ff() { find . -name '*'$1'*' ; }                 # find a file
+function fe() { find . -name '*'$1'*' -exec $2 {} \; ; }  # find a file and run $2 on it
+
+# projects
+alias cdbs='cd ~/AptanaWorkspace/bs'
+alias cddot='cd ~/AptanaWorkspace/dotfiles'
+alias cdva='cd ~/AptanaWorkspace/va'
+alias cdop='cd ~/AptanaWorkspace/op'
+alias cdra='cd ~/AptanaWorkspace/ref_area'
+
+# Show what is taking up space
+alias diskspace="du -S | sort -n -r |more"
+
+# Show me the size (sorted) of only the folders in this directory
+alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"

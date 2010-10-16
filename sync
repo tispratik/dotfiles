@@ -1,0 +1,2 @@
+cp /home/pratik/projects/dotfiles/bashrc /home/pratik/bin
+cp -r /home/pratik/projects/dotfiles/bash/* /home/pratik/bin/bash

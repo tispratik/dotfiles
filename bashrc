@@ -1,8 +1,8 @@
-source ~/AptanaWorkspace/dotfiles/bash/config
-source ~/AptanaWorkspace/dotfiles/bash/paths
-source ~/AptanaWorkspace/dotfiles/bash/env
-source ~/AptanaWorkspace/dotfiles/bash/aliases
-source ~/AptanaWorkspace/dotfiles/bash/completions
+source ~/projects/dotfiles/bash/config
+source ~/projects/dotfiles/bash/paths
+source ~/projects/dotfiles/bash/env
+source ~/projects/dotfiles/bash/aliases
+source ~/projects/dotfiles/bash/completions
 
 if [ -f ~/bin/bash/local_aliases ]; then
   . ~/bin/bash/local_aliases

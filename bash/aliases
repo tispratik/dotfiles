@@ -48,7 +48,7 @@ alias grep='grep --color=auto'   # Color found text
 alias cdd='cd -'  # goto last dir cd'ed from
 
 function cdh() {
- cd ~/AptanaWorkspace/$*
+ cd ~/projects/$*
 }
 
 function cdc() { 
@@ -188,11 +188,11 @@ function ff() { find . -name '*'$1'*' ; }                 # find a file
 function fe() { find . -name '*'$1'*' -exec $2 {} \; ; }  # find a file and run $2 on it
 
 # projects
-alias cdbs='cd ~/AptanaWorkspace/bs'
-alias cddot='cd ~/AptanaWorkspace/dotfiles'
-alias cdva='cd ~/AptanaWorkspace/va'
-alias cdop='cd ~/AptanaWorkspace/op'
-alias cdra='cd ~/AptanaWorkspace/ref_area'
+alias cdbs='cd ~/projects/bs'
+alias cddot='cd ~/projects/dotfiles'
+alias cdva='cd ~/projects/va'
+alias cdop='cd ~/projects/op'
+alias cdra='cd ~/projects/ref_area'
 
 # Show what is taking up space
 alias diskspace="du -S | sort -n -r |more"

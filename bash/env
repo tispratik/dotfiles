@@ -6,9 +6,14 @@ if [ `uname` == 'Darwin' ]; then
   export EDITOR="mvim -v"
 fi
 
+DEPLOY_USER_NAME=deploy
+username=`id -nu`              # Or...   username=`whoami`
+
 # Red prompt for root
 if [ $(id -u) = "0" ]; then
   PS1="$RED\n\u@\h:\w \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \n→ $RED"  
+elif [ "$username" = "$DEPLOY_USER_NAME" ]; then
+  PS1="$EWHITE\n\u@\h:\w \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \n→ $EWHITE"  
 else
   PS1="\n\u@\h:\w \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \n→ "
 fi

@@ -1,7 +1,7 @@
-source ~/AptanaWorkspace/dotfiles/bash/completion_scripts/git-completion.sh
-complete -C ~/AptanaWorkspace/dotfiles/bash/completion_scripts/rake_completion -o default rake
-complete -C ~/AptanaWorkspace/dotfiles/bash/completion_scripts/project_completion -o default c
-complete -C ~/AptanaWorkspace/dotfiles/bash/completion_scripts/capistrano_completion -o default cap
+source ~/projects/dotfiles/bash/completion_scripts/git-completion.sh
+complete -C ~/projects/dotfiles/bash/completion_scripts/rake_completion -o default rake
+complete -C ~/projects/dotfiles/bash/completion_scripts/project_completion -o default c
+complete -C ~/projects/dotfiles/bash/completion_scripts/capistrano_completion -o default cap
 
 if [ -f ~/bin/bash/local_completion ]; then
   . ~/bin/bash/local_completion

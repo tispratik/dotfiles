@@ -1,8 +1,8 @@
-source ~/projects/dotfiles/bash/config
-source ~/projects/dotfiles/bash/paths
-source ~/projects/dotfiles/bash/env
-source ~/projects/dotfiles/bash/aliases
-source ~/projects/dotfiles/bash/completions
+source ~/Projects/dotfiles/bash/config
+source ~/Projects/dotfiles/bash/paths
+source ~/Projects/dotfiles/bash/env
+source ~/Projects/dotfiles/bash/aliases
+source ~/Projects/dotfiles/bash/completions
 
 if [ -f ~/bin/bash/local_aliases ]; then
   . ~/bin/bash/local_aliases

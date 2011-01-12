@@ -1,2 +1,2 @@
 export rvm_pretty_print_flag=1
-export rvm_archflags="-arch x86_64-linux"
+#export rvm_archflags="-arch x86_64-linux"

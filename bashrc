@@ -4,17 +4,17 @@ source ~/Auxiliary\ Projects/dotfiles/bash/env
 source ~/Auxiliary\ Projects/dotfiles/bash/aliases
 source ~/Auxiliary\ Projects/dotfiles/bash/completions
 
-# Gem
-source ~/Auxiliary\ Projects/dotfiles/bash/gemrc
-
-# Ruby Debug
-source ~/Auxiliary\ Projects/dotfiles/bash/rdebugrc
+# Nano
+source ~/Auxiliary\ Projects/dotfiles/nanorc
 
 # RVM
-source ~/Auxiliary\ Projects/dotfiles/bash/rvmrc
+source ~/Auxiliary\ Projects/dotfiles/rvmrc
 
-# Nano
-source ~/Auxiliary\ Projects/dotfiles/bash/nanorc
+# Gem
+# source ~/Auxiliary\ Projects/dotfiles/gemrc
+
+# Ruby Debug
+# source ~/Auxiliary\ Projects/dotfiles/rdebugrc
 
 #source ~/Auxiliary\ Projects/dotfiles/bash/gitconfig
 

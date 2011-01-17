@@ -10,9 +10,6 @@ source ~/Auxiliary\ Projects/dotfiles/nanorc
 # RVM
 source ~/Auxiliary\ Projects/dotfiles/rvmrc
 
-# Gem
-# source ~/Auxiliary\ Projects/dotfiles/gemrc
-
 # Ruby Debug
 # source ~/Auxiliary\ Projects/dotfiles/rdebugrc
 

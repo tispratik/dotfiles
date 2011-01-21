@@ -75,6 +75,15 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
+
+function glog(){
+  if [ "$1" = "" ]; then
+    git log --all --pretty=format:"%h %cd %s (%an)"
+  else
+    git log --all --pretty=format:"%h %cd %s (%an)" --since="$1 days ago"
+  fi
+}
+
 # Commit pending changes and quote all args as message
 function gg() { 
     git commit -v -a -m "$*"

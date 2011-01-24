@@ -140,6 +140,7 @@ alias ts='thin start'
 
 # TDD / BDD
 # ---------
+alias spec='rspec spec --color --format doc'
 alias aa='autotest'
 alias aaf='autotest -f' # Don't run all at start
 alias aas="./script/autospec"

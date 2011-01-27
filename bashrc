@@ -13,6 +13,9 @@ source ~/Auxiliary\ Projects/dotfiles/rvmrc
 # Ruby Debug
 # source ~/Auxiliary\ Projects/dotfiles/rdebugrc
 
+# IRBRC
+# source ~/Auxiliary\ Projects/dotfiles/irbrc
+
 #source ~/Auxiliary\ Projects/dotfiles/bash/gitconfig
 
 if [ -f ~/.local_aliases ]; then

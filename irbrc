@@ -1,4 +1,7 @@
+#!/usr/bin/env ruby
+
 require 'rubygems' rescue nil
+require 'irb'
 require 'wirble'
 require 'hirb'
 require 'ap'

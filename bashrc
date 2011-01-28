@@ -13,9 +13,6 @@ source ~/Auxiliary\ Projects/dotfiles/rvmrc
 # Ruby Debug
 # source ~/Auxiliary\ Projects/dotfiles/rdebugrc
 
-# IRBRC
-# source ~/Auxiliary\ Projects/dotfiles/irbrc
-
 #source ~/Auxiliary\ Projects/dotfiles/bash/gitconfig
 
 if [ -f ~/.local_aliases ]; then
@@ -27,3 +24,6 @@ if [ -f ~/.local_paths ]; then
 fi
 
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
+
+# IRBRC
+# ruby ~/Auxiliary\ Projects/dotfiles/irbrc

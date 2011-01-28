@@ -133,6 +133,9 @@ function new-git() {
   git config push.default current
 }
 
+# Git undo last commit
+alias gitundo='git reset --soft HEAD^'
+
 # Ruby
 # ----
 alias r="rake"

@@ -85,6 +85,9 @@ function glog(){
   fi
 }
 
+alias glo='git log --oneline'
+alias glor='git log --oneline remotes/origin/master'
+
 # Commit pending changes and quote all args as message
 function gg() { 
     git commit -v -a -m "$*"

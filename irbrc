@@ -1,6 +1,7 @@
 require 'rubygems' rescue nil
 require 'wirble'
 require 'hirb'
+require 'ap'
 
 # load wirble
 Wirble.init
@@ -42,3 +43,5 @@ end
 def show(obj)
   y(obj.send("column_names"))
 end
+
+puts "> all systems are go wirble/hirb/ap/show <"

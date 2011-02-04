@@ -90,13 +90,15 @@ alias glo='git log --oneline'
 alias glor='git log --oneline remotes/origin/master'
 
 # Commit pending changes and quote all args as message
-function gg() { 
-    git commit -v -a -m "$*"
-}
+#function gg() { 
+#    git commit -v -a -m "$*"
+#}
+
 # Commit pending changes and quote all args as message and then push to remote repo
 function gg() { 
     git commit -v -a -m "$*"; git push
 }
+
 alias gco='git checkout'
 alias gd='git diff'
 alias gdm='git diff master'

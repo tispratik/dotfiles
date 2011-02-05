@@ -12,14 +12,16 @@ alias df='df -kh'
 
 # The 'ls' family
 # ---------------
-alias ls='ls -hF --color'	# add colors for filetype recognition
-alias lx='ls -lXB'		# sort by extension
-alias lk='ls -lSr'		# sort by size
-alias l='ls -l'			# long list
-alias la='ls -lA'		# show hidden files
-alias ll='ls -lh'               # -l long listing, human readable
-alias lt='ls -ltr'		# sort by date
-alias lm='ls -al |more'		# pipe through 'more'
+alias ls='ls -hF --color'				  # add colors for filetype recognition
+alias lx='ls -lXB'					  # sort by extension
+alias lk='ls -lSr'					  # sort by size
+alias l='ls -l'						  # long list
+alias la='ls -lA'					  # show hidden files
+alias laf='ls -a | grep "^\."'  			  # hidden files only
+alias lad='ls -ad .* | grep / | more -p'  		  # hidden directories only
+alias ll='ls -lh'               			  # -l long listing, human readable
+alias lt='ls -ltr'					  # sort by date
+alias lm='ls -al |more'					  # pipe through 'more'
 
 # spelling typos
 # --------------

@@ -45,11 +45,14 @@ alias md='mkdir -p'
 alias e='exit'
 alias kb="kill -9 %1 %2"
 alias grep='grep --color=auto'   # Color found text
-alias gt='gnome-terminal -t'
 alias chmod='chmod -c'
 alias cpr='cp -rpv'
 alias whatismyip="wget -q -O - http://whatismyip.com/automation/n09230945.asp"
 
+# Gnome Terminal
+function gt() { 
+  gnome-terminal -t $1 --working-directory ~ --window-with-profile=pratik --geometry=180x40 &
+}
 
 # Quicker cd
 # ----------

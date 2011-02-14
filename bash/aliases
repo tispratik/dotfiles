@@ -160,6 +160,9 @@ alias aa='autotest'
 alias aaf='autotest -f' # Don't run all at start
 alias aas="./script/autospec"
 
+# Crontab
+alias crontab='crontab -e'
+
 # Nginx
 # -----
 function nginx_stop() {

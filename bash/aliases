@@ -223,3 +223,6 @@ alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
 
 # Boom => https://github.com/holman/boom
 alias b='boom'
+
+# Others
+alias gt='gnome-terminal -t'

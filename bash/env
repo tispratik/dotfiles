@@ -15,5 +15,5 @@ if [ $(id -u) = "0" ]; then
 elif [ "$username" = "$DEPLOY_USER_NAME" ]; then
   PS1="$EWHITE\n\u@\h:\w \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \n→ $EWHITE"  
 else
-  PS1="\n\n\n\[$YELLOW\]\d \t \[$NO_COLOR\]\n\u@\h:\[$ECYAN\]`pwd`\[$NO_COLOR\] \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \$(rvm-prompt i v)\[$BYELLOW\]\$(rvm-prompt g)\[$NO_COLOR\] \n→ "
+  PS1="\n\n\[$YELLOW\]\d \t \[$NO_COLOR\]\n\u@\h:\[$ECYAN\]`pwd`\[$NO_COLOR\] \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \$(rvm-prompt i v)\[$BLUE\]\$(rvm-prompt g)\[$NO_COLOR\] \n→ "
 fi

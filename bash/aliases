@@ -45,6 +45,11 @@ alias md='mkdir -p'
 alias e='exit'
 alias kb="kill -9 %1 %2"
 alias grep='grep --color=auto'   # Color found text
+alias gt='gnome-terminal -t'
+alias chmod='chmod -c'
+alias cpr='cp -rpv'
+alias whatismyip="wget -q -O - http://whatismyip.com/automation/n09230945.asp"
+
 
 # Quicker cd
 # ----------
@@ -223,6 +228,3 @@ alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
 
 # Boom => https://github.com/holman/boom
 alias b='boom'
-
-# Others
-alias gt='gnome-terminal -t'

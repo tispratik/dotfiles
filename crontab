@@ -1,0 +1,2 @@
+# Alert every 10 minutes
+*/10 * * * * DISPLAY=:0.0 notify-send -t 10000 "10-10-10 Principle" "Please stop staring at the monitor so hard !!! Your eyes are gonna go bad!"

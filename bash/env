@@ -34,5 +34,5 @@ if [ $(id -u) == "0" ]; then
 elif [ "$username" == "$DEPLOY_USR" ]; then
   PROMPT_COMMAND='PS1="$EMW\n\u@\h:\w \n→ $N"'
 else
-  PROMPT_COMMAND='PS1="\n\n$Y\d \t$N (`~/Auxiliary\ Projects/scripts/ruby/loadavg.rb`)$N\n\u@\h:$EMC`pwd`$N \$(rvmp i v)$EMB\$(rvmp g)$N $(git_prompt)\n→ "'
+  PROMPT_COMMAND='PS1="\n\n$Y\d \t$N (`~/Auxiliary\ Projects/scripts/ruby/loadavg.rb`)$N\n\u@\h:$EMC \w$N \$(rvmp i v)$EMB\$(rvmp g)$N$(git_prompt)\n→ "'
 fi

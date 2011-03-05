@@ -6,14 +6,16 @@ if [ `uname` == 'Darwin' ]; then
   export EDITOR="mvim -v"
 fi
 
-DEPLOY_USER_NAME=deploy
+DEPLOY_USR=deploy
 username=`id -nu`              # Or...   username=`whoami`
+alias rvmp='rvm-prompt'
+alias vcp='vcprompt --format "%b"'
 
 # Red prompt for root
 if [ $(id -u) = "0" ]; then
-  PS1="$RED\n\u@\h:\w \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \n→ $RED"  
-elif [ "$username" = "$DEPLOY_USER_NAME" ]; then
-  PS1="$EWHITE\n\u@\h:\w \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \n→ $EWHITE"  
+  PS1="$R\n\u@\h:\w $BGG\$(vcp)$N \n→ $R"
+elif [ "$username" = "$DEPLOY_USR" ]; then
+  PS1="$EMW\n\u@\h:\w $BGG\$(vcp)$N \n→ $EMW"  
 else
-  PS1="\n\n\[$YELLOW\]\d \t \[$NO_COLOR\]\n\u@\h:\[$ECYAN\]\w\[$NO_COLOR\] \[$BGREEN\]\$(vcprompt --format "%b")\[$NO_COLOR\] \$(rvm-prompt i v)\[$BLUE\]\$(rvm-prompt g)\[$NO_COLOR\] \n→ "
+  PS1="\n\n$Y\d \t $N\n\u@\h:$EMC\w$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N \n→ "
 fi

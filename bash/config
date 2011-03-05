@@ -1,3 +1,31 @@
+# Color and Style Codes Reference
+# Style
+# 0 – default
+# 1 – bold
+# 4 – underline
+# 7 – inverse
+# 9 – strikeout
+
+# Foreground Colors
+# 30 – foreground Black
+# 31 – foreground Red
+# 32 – foreground Green
+# 33 – foreground Yellow
+# 34 – foreground Blue
+# 35 – foreground Magenta
+# 36 – foreground Cyan
+# 37 – foreground White
+
+# Background Colors
+# 40 – background Black
+# 41 – background Red
+# 42 – background Green
+# 43 – background Yellow
+# 44 – background Blue
+# 45 – background Magenta
+# 46 – background Cyan
+# 47 – background White
+
 N='\e[0m' 	      # disable-color
 
 # regular colors

@@ -10,9 +10,9 @@ alias vcp='vcprompt --format "%b"'
 
 # Red prompt for root
 if [ $(id -u) == "0" ]; then
-  PS1="$R\n\u@\h:\w $BGG\$(vcp)$N \n→ $R"
+  PROMPT_COMMAND='PS1="$R\n\u@\h:\w $BGG\$(vcp)$N \n→ $R"'
 elif [ "$username" == "$DEPLOY_USR" ]; then
-  PS1="$EMW\n\u@\h:\w $BGG\$(vcp)$N \n→ $EMW"  
+  PROMPT_COMMAND='PS1="$EMW\n\u@\h:\w $BGG\$(vcp)$N \n→ $EMW"'
 else
-  PS1="\a\n\n$Y\d \t $N\n\u@\h:$EMC\w$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N $(_git_dirty)\n→ "
+  PROMPT_COMMAND='PS1="\a\n\n$Y\d \t $N\n\u@\h:$EMC`pwd`$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N\n→ "'
 fi

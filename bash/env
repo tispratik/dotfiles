@@ -14,5 +14,5 @@ if [ $(id -u) == "0" ]; then
 elif [ "$username" == "$DEPLOY_USR" ]; then
   PROMPT_COMMAND='PS1="$EMW\n\u@\h:\w $BGG\$(vcp)$N \n→ $EMW"'
 else
-  PROMPT_COMMAND='PS1="\n\n$Y\d \t$N (`~/Auxiliary\ Projects/scripts/ruby/uptime.rb`)$N\n\u@\h:$EMC`pwd`$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N\n→ "'
+  PROMPT_COMMAND='PS1="\n\n$Y\d \t$N (`~/Auxiliary\ Projects/scripts/ruby/loadavg.rb`)$N\n\u@\h:$EMC`pwd`$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N\n→ "'
 fi

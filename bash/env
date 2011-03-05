@@ -18,11 +18,16 @@ username=`id -nu`              # Or...   username=`whoami`
 alias rvmp='rvm-prompt'
 alias vcp='vcprompt --format "%b"'
 
-# Red prompt for root
-if [ $(id -u) == "0" ]; then
-  PS1="$R\n\u@\h:\w $BGG\$(vcp)$N \n→ $R"
-elif [ "$username" == "$DEPLOY_USR" ]; then
-  PS1="$EMW\n\u@\h:\w $BGG\$(vcp)$N \n→ $EMW"  
-else
-  PS1="\n\n$Y\d \t $N\n\u@\h:$EMC\w$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N $(__git_dirty)\n→ "
-fi
+bash_prompt(){
+	# Red prompt for root
+	if [ $(id -u) == "0" ]; then
+	  PS1="$R\n\u@\h:\w $BGG\$(vcp)$N \n→ $R"
+	elif [ "$username" == "$DEPLOY_USR" ]; then
+	  PS1="$EMW\n\u@\h:\w $BGG\$(vcp)$N \n→ $EMW"  
+	else
+	  PS1="\n\n$Y\d \t $N\n\u@\h:$EMC\w$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N $(__git_dirty)\n→ "
+	fi
+}
+
+bash_prompt
+unset bash_prompt

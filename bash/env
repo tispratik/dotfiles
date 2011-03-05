@@ -6,6 +6,11 @@ if [ `uname` == 'Darwin' ]; then
   export EDITOR="mvim -v"
 fi
 
+function __git_dirty {
+  git diff --quiet HEAD &>/dev/null 
+  [ $? == 1 ] && echo "!"
+}
+
 DEPLOY_USR=deploy
 username=`id -nu`              # Or...   username=`whoami`
 alias rvmp='rvm-prompt'
@@ -17,5 +22,5 @@ if [ $(id -u) = "0" ]; then
 elif [ "$username" = "$DEPLOY_USR" ]; then
   PS1="$EMW\n\u@\h:\w $BGG\$(vcp)$N \n→ $EMW"  
 else
-  PS1="\n\n$Y\d \t $N\n\u@\h:$EMC\w$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N \n→ "
+  PS1="\n\n$Y\d \t $N\n\u@\h:$EMC\w$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N $(__git_dirty)\n→ "
 fi

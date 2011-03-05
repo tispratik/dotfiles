@@ -3,26 +3,16 @@ if [ `uname` == 'Darwin' ]; then
   export EDITOR="mvim -v"
 fi
 
-function _git_dirty() {
-  git diff --quiet HEAD &>/dev/null
-  if [ $? == 1 ]; then 
-    echo "!" 
-  fi
-}
-
-function _git_branch() {
-  git branch | grep "^\*" | cut -c3-
-}
-
 DEPLOY_USR=deploy
 username=`id -nu`              # Or...   username=`whoami`
 alias rvmp='rvm-prompt'
+alias vcp='vcprompt --format "%b"'
 
 # Red prompt for root
 if [ $(id -u) == "0" ]; then
-  PS1="$R\n\u@\h:\w $BGG\$(__gb)$N \n→ $R"
+  PS1="$R\n\u@\h:\w $BGG\$(vcp)$N \n→ $R"
 elif [ "$username" == "$DEPLOY_USR" ]; then
-  PS1="$EMW\n\u@\h:\w $BGG\$(__gb)$N \n→ $EMW"  
+  PS1="$EMW\n\u@\h:\w $BGG\$(vcp)$N \n→ $EMW"  
 else
-  PS1="\a\n\n$Y\d \t $N\n\u@\h:$EMC\w$N $BGG\$(_git_branch)$N \$(rvmp i v)$EMB\$(rvmp g)$N $(_git_dirty)\n→ "
+  PS1="\a\n\n$Y\d \t $N\n\u@\h:$EMC\w$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N $(_git_dirty)\n→ "
 fi

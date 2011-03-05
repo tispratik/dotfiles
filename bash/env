@@ -6,13 +6,33 @@ fi
 DEPLOY_USR=deploy
 username=`id -nu`              # Or...   username=`whoami`
 alias rvmp='rvm-prompt'
-alias vcp='vcprompt --format "%b"'
+
+# Function to assemble the Git part of our prompt.
+git_prompt ()
+{
+    if ! git rev-parse --git-dir > /dev/null 2>&1; then
+        return 0
+    fi
+ 
+    git_branch=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
+ 
+    if git diff --quiet 2>/dev/null >&2; then
+        git_color="$EMG"
+    else
+        git_color="$EMR"
+    fi
+ 
+    echo " [$git_color$git_branch$N]"
+}
+
+
+# PROMPT_COMMAND - If set, the value is executed as a command prior to issuing each primary prompt.
 
 # Red prompt for root
 if [ $(id -u) == "0" ]; then
-  PROMPT_COMMAND='PS1="$R\n\u@\h:\w $BGG\$(vcp)$N \n→ $R"'
+  PROMPT_COMMAND='PS1="$R\n\u@\h:\w\n→ $N"'
 elif [ "$username" == "$DEPLOY_USR" ]; then
-  PROMPT_COMMAND='PS1="$EMW\n\u@\h:\w $BGG\$(vcp)$N \n→ $EMW"'
+  PROMPT_COMMAND='PS1="$EMW\n\u@\h:\w \n→ $N"'
 else
-  PROMPT_COMMAND='PS1="\n\n$Y\d \t$N (`~/Auxiliary\ Projects/scripts/ruby/loadavg.rb`)$N\n\u@\h:$EMC`pwd`$N $BGG\$(vcp)$N \$(rvmp i v)$EMB\$(rvmp g)$N\n→ "'
+  PROMPT_COMMAND='PS1="\n\n$Y\d \t$N (`~/Auxiliary\ Projects/scripts/ruby/loadavg.rb`)$N\n\u@\h:$EMC`pwd`$N \$(rvmp i v)$EMB\$(rvmp g)$N $(git_prompt)\n→ "'
 fi

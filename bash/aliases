@@ -110,8 +110,8 @@ function gg() {
 }
 
 alias gco='git checkout'
-alias gd='git diff'
-alias gdm='git diff master'
+alias gd='git diff --color'
+alias gdm='git diff master --color'
 alias gl='git pull'
 alias gp='git push'
 alias g='git status'

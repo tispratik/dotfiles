@@ -36,3 +36,7 @@ elif [ "$username" == "$DEPLOY_USR" ]; then
 else
   PROMPT_COMMAND='PS1="\n\n$Y\d \t$N\n\u@\h:$EMC \w$N \$(rvmp i v)$EMB\$(rvmp g)$N$(git_prompt)\n→ "'
 fi
+
+# Suppress duplicate entries by using the & switch. 
+# Also prevent ls, bg, fg, exit and other commands without parameters to be stored in history.
+export HISTIGNORE="&:ls:[bf]g:exit:h:l:c:..:...:kb:g:gl:"

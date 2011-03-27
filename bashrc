@@ -23,6 +23,7 @@ if [ -f ~/.local_paths ]; then
   . ~/.local_paths
 fi
 
+# This loads RVM into a shell session.
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
 
 # IRBRC

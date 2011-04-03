@@ -30,7 +30,7 @@ git_prompt ()
 
 # Red prompt for root
 if [ $(id -u) == "0" ]; then
-  PROMPT_COMMAND='PS1="$R\n\u@\h:\w\n→ $N"'
+  PROMPT_COMMAND='PS1="\n$R\u@\h: \w\n→ "'
 elif [ "$username" == "$DEPLOY_USR" ]; then
   PROMPT_COMMAND='PS1="$EMW\n\u@\h:\w \n→ $N"'
 else

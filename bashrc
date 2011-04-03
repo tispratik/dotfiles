@@ -24,7 +24,8 @@ if [ -f ~/.local_paths ]; then
 fi
 
 # This loads RVM into a shell session.
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi	# If RVM is installed in user's home
+if [[ -s "/usr/local/bin/rvm" ]]  ; then source "/usr/local/bin/rvm" ; fi		# If RVM is installed system-wide
 
 # IRBRC
 # ruby ~/Auxiliary\ Projects/dotfiles/irbrc

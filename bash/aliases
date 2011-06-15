@@ -50,7 +50,7 @@ alias cpr='cp -rpv'
 alias whatismyip="wget -q -O - http://whatismyip.com/automation/n09230945.asp"
 alias hg='h | grep'
 alias pg='ps -ef | grep'
-alias lsof='lsof -Pnl +M -i'
+alias lsof='lsof -Pnl +M -i4'
 alias lsof6='lsof -Pnl +M -i6'
 
 # Gnome Terminal

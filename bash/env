@@ -1,6 +1,8 @@
 if [ `uname` == 'Darwin' ]; then
   # We need gui support for plugins
   export EDITOR="mvim -v"
+  export CLICOLOR=1 # For color with ls command on mac http://www.geekology.co.za/blog/2009/04/enabling-bash-terminal-directory-file-color-highlighting-mac-os-x/
+  export LSCOLORS=ExFxCxDxBxegedabagacad
 fi
 
 DEPLOY_USR=deploy

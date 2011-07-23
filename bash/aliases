@@ -12,7 +12,7 @@ alias df='df -kh'
 
 # The 'ls' family
 # ---------------
-alias ls='ls -hF --color'				  # add colors for filetype recognition
+#alias ls='ls -hF --color'				  # add colors for filetype recognition
 alias lx='ls -lXB'					  # sort by extension
 alias lk='ls -lSr'					  # sort by size
 alias l='clear; ls -1'					  # long list

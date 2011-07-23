@@ -4,6 +4,10 @@ source ~/Auxiliary\ Projects/dotfiles/bash/env
 source ~/Auxiliary\ Projects/dotfiles/bash/aliases
 source ~/Auxiliary\ Projects/dotfiles/bash/completions
 
+if [ `uname` == 'Darwin' ]; then
+  source ~/Auxiliary\ Projects/dotfiles/bash/mac_aliases
+fi
+
 # Nano
 source ~/Auxiliary\ Projects/dotfiles/nanorc
 

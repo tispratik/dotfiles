@@ -15,6 +15,9 @@ Hirb::View.enable
 
 IRB.conf[:AUTO_INDENT] = true
 
+# Remove the annoying irb(main):001:0 and replace with >>
+IRB.conf[:PROMPT_MODE]  = :SIMPLE
+
 if ENV.include?('RAILS_ENV')
   if !Object.const_defined?('RAILS_DEFAULT_LOGGER')
     require 'logger'

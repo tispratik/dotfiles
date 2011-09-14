@@ -1,4 +1,5 @@
 .idea
+.redcar
 .DS\_Store
 *.sw?
 mkmf.log

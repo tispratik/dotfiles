@@ -1,4 +1,4 @@
-source ~/Auxiliary\ Projects/dotfiles/bash/config
+source ~/Auxiliary\ Projects/dotfiles/bash/colors
 source ~/Auxiliary\ Projects/dotfiles/bash/paths
 source ~/Auxiliary\ Projects/dotfiles/bash/env
 source ~/Auxiliary\ Projects/dotfiles/bash/aliases

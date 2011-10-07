@@ -1,0 +1,2 @@
+# Enable vi editing mode on bash terminal
+set -o vi

@@ -1,7 +1,7 @@
 set ls=2            " allways show status line
 set hlsearch        " highlight searches
 set showcmd         " display incomplete commands
-set showmatch	    " Show matching brackets/braces/parantheses.
+"set showmatch	    " Show matching brackets/braces/parantheses.
 set incsearch       " do incremental searching
 set ruler           " show the cursor position all the time
 set nobackup        " do not keep a backup file

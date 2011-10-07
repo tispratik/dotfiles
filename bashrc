@@ -28,7 +28,7 @@ if [ -f ~/.local_paths ]; then
 fi
 
 # Load the global gitignore file if not existing already
-if [ -f ~/.gitignore ]; then
+if [ ! -f ~/.gitignore ]; then
   ln -s ~/Auxiliary\ Projects/dotfiles/gitignore ~/.gitignore
 fi  
 

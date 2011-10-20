@@ -1,4 +1,4 @@
-source ~/Auxiliary\ Projects/dotfiles/bash/config
+source ~/Auxiliary\ Projects/dotfiles/bash/colors
 source ~/Auxiliary\ Projects/dotfiles/bash/paths
 source ~/Auxiliary\ Projects/dotfiles/bash/env
 source ~/Auxiliary\ Projects/dotfiles/bash/aliases
@@ -24,7 +24,7 @@ if [ -f ~/.local_settings ]; then
 fi
 
 # Load the global gitignore file if not existing already
-if [ -f ~/.gitignore ]; then
+if [ ! -f ~/.gitignore ]; then
   ln -s ~/Auxiliary\ Projects/dotfiles/gitignore ~/.gitignore
 fi  
 

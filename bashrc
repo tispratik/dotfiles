@@ -28,6 +28,10 @@ if [ ! -f ~/.gitignore ]; then
   ln -s ~/Auxiliary\ Projects/dotfiles/gitignore ~/.gitignore
 fi  
 
+if [ ! -f ~/.inputrc ]; then
+  ln -s ~/Auxiliary\ Projects/dotfiles/inputrc ~/.inputrc
+fi
+
 # This loads RVM into a shell session.
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then . "$HOME/.rvm/scripts/rvm" > /dev/null; fi		# If RVM is installed in user's home
 if [[ -s "/usr/local/bin/rvm" ]]  ; 	then . "/usr/local/bin/rvm" > /dev/null; fi		# If RVM is installed system-wide

@@ -234,5 +234,6 @@ alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
 alias b='boom'
 
 function t {
-  printf "\033]0;%s\007"
+  #printf "\033]0;%s\007"
+  title $1
 }

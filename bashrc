@@ -19,12 +19,8 @@ source ~/Auxiliary\ Projects/dotfiles/rvmrc
 
 #source ~/Auxiliary\ Projects/dotfiles/bash/gitconfig
 
-if [ -f ~/.local_aliases ]; then
-  . ~/.local_aliases
-fi
-
-if [ -f ~/.local_paths ]; then
-  . ~/.local_paths
+if [ -f ~/.local_settings ]; then
+  . ~/.local_settings
 fi
 
 # Load the global gitignore file if not existing already

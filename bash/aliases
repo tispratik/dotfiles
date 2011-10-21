@@ -162,13 +162,6 @@ alias sp='./script/plugin'
 alias ss='./script/server'
 alias ts='thin start'
 
-# TDD / BDD
-# ---------
-alias spec='rspec spec --color --format doc'
-alias aa='autotest'
-alias aaf='autotest -f' # Don't run all at start
-alias aas="./script/autospec"
-
 # Crontab
 alias crontab='crontab -i'
 

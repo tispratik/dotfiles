@@ -91,6 +91,25 @@ alias gba='git branch -a'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias glistcomm='git log --pretty=format:%aN | sort | uniq -c | sort -rn'
+alias glo='git log --oneline'
+alias glor='git log --oneline remotes/origin/master'
+alias gco='git checkout'
+alias gd='git diff --color'
+alias gdm='git diff master --color'
+alias gl='git pull'
+alias gp='git push'
+alias g='git status'
+alias gconf='cat .git/config'
+alias gk='gitk &'
+alias gr='git rebase -i HEAD~5'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
+alias gfa='git fetch --all'
+alias gcp='git cherry-pick'
+alias grh='git reset HEAD'
+alias gs='git stash save'
+alias gsc='git stash clear'
+alias gsa='git stash apply'
 
 function glog(){
   if [ "$1" = "" ]; then
@@ -100,29 +119,14 @@ function glog(){
   fi
 }
 
-alias glo='git log --oneline'
-alias glor='git log --oneline remotes/origin/master'
-
-# Commit pending changes and quote all args as message
-#function gg() { 
-#    git commit -v -a -m "$*"
-#}
+# Git clone from GitHub
+function gch() {
+  git clone git://github.com/$USER/$1.git
+}
 
 # Commit pending changes and quote all args as message and then push to remote repo
 function gg() { 
     git commit -v -a -m "$*"; git push
-}
-
-alias gco='git checkout'
-alias gd='git diff --color'
-alias gdm='git diff master --color'
-alias gl='git pull'
-alias gp='git push'
-alias g='git status'
-alias gconf='cat .git/config'
-# Git clone from GitHub
-function gch() {
-  git clone git://github.com/$USER/$1.git
 }
 
 # Glone a specific branch

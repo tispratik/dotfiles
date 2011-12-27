@@ -22,6 +22,7 @@ alias lad='ls -ad .* | grep / | more -p'  		  # hidden directories only
 alias ll='ls -lh'               			  # -l long listing, human readable
 alias lt='ls -ltr'					  # sort by date
 alias lm='ls -al |more'					  # pipe through 'more'
+alias ld="ls -l | egrep '^d'"
 
 # spelling typos
 # --------------

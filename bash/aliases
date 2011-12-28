@@ -12,7 +12,6 @@ alias df='df -kh'
 
 # The 'ls' family
 # ---------------
-#alias ls='ls -hF --color'				  # add colors for filetype recognition
 alias lx='ls -lXB'					  # sort by extension
 alias lk='ls -lSr'					  # sort by size
 alias l='clear; ls -1'					  # long list
@@ -23,6 +22,7 @@ alias ll='ls -lh'               			  # -l long listing, human readable
 alias lt='ls -ltr'					  # sort by date
 alias lm='ls -al |more'					  # pipe through 'more'
 alias ld="ls -l | egrep '^d'"
+alias lf="ls -l | egrep -v '^d'"
 
 # spelling typos
 # --------------
@@ -91,9 +91,13 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
+
+# git log
 alias glistcomm='git log --pretty=format:%aN | sort | uniq -c | sort -rn'
 alias glo='git log --oneline'
 alias glor='git log --oneline remotes/origin/master'
+alias glogd='git log --stat'
+
 alias gco='git checkout'
 alias gd='git diff --color'
 alias gdm='git diff master --color'

@@ -11,3 +11,16 @@ set notitle         " When using vim in an xterm it renames the title of that wi
 syntax on           " syntax highlighing
 filetype off
 filetype plugin indent on         " To enable file type detection for syntax highlighting
+set tabstop=2
+set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_  " Show “invisible” characters
+set mouse=a         " Enable mouse in all modes
+
+" Strip trailing whitespace (,ss)
+function! StripWhitespace ()
+	let save_cursor = getpos(".")
+	let old_query = getreg('/')
+	:%s/\s\+$//e
+	call setpos('.', save_cursor)
+	call setreg('/', old_query)
+endfunction
+noremap <leader>ss :call StripWhitespace ()<CR>

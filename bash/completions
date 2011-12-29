@@ -1,7 +1,7 @@
-source ~/Auxiliary\ Projects/dotfiles/bash/completion_scripts/git-completion.sh
-complete -C ~/Auxiliary\ Projects/dotfiles/bash/completion_scripts/rake_completion -o default rake
-complete -C ~/Auxiliary\ Projects/dotfiles/bash/completion_scripts/project_completion -o default c
-complete -C ~/Auxiliary\ Projects/dotfiles/bash/completion_scripts/capistrano_completion -o default cap
+source ~/dotfiles/bash/completion_scripts/git-completion.sh
+complete -C ~/dotfiles/bash/completion_scripts/rake_completion -o default rake
+complete -C ~/dotfiles/bash/completion_scripts/project_completion -o default c
+complete -C ~/dotfiles/bash/completion_scripts/capistrano_completion -o default cap
 
 if [ -f ~/bin/bash/local_completion ]; then
   . ~/bin/bash/local_completion

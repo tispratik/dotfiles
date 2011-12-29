@@ -1,35 +1,39 @@
-source ~/Auxiliary\ Projects/dotfiles/bash/colors
-source ~/Auxiliary\ Projects/dotfiles/bash/paths
-source ~/Auxiliary\ Projects/dotfiles/bash/env
-source ~/Auxiliary\ Projects/dotfiles/bash/aliases
-source ~/Auxiliary\ Projects/dotfiles/bash/completions
+source ~/dotfiles/bash/colors
+source ~/dotfiles/bash/paths
+source ~/dotfiles/bash/env
+source ~/dotfiles/bash/aliases
+source ~/dotfiles/bash/completions
 
 if [ `uname` == 'Darwin' ]; then
-  source ~/Auxiliary\ Projects/dotfiles/bash/mac_aliases
+  source ~/dotfiles/bash/mac_aliases
 fi
 
 # Nano
-source ~/Auxiliary\ Projects/dotfiles/nanorc
+source ~/dotfiles/nanorc
 
 # RVM
-source ~/Auxiliary\ Projects/dotfiles/rvmrc
+source ~/dotfiles/rvmrc
 
 # Ruby Debug
-# source ~/Auxiliary\ Projects/dotfiles/rdebugrc
+# source ~/dotfiles/rdebugrc
 
-#source ~/Auxiliary\ Projects/dotfiles/bash/gitconfig
+#source ~/dotfiles/bash/gitconfig
 
 if [ -f ~/.local_settings ]; then
   . ~/.local_settings
 fi
 
+if [ ! -f ~/.vimrc ]; then
+  ln -s ~/dotfiles/vimrc ~/.vimrc
+fi
+
 # Load the global gitignore file if not existing already
 if [ ! -f ~/.gitignore ]; then
-  ln -s ~/Auxiliary\ Projects/dotfiles/gitignore ~/.gitignore
+  ln -s ~/dotfiles/gitignore ~/.gitignore
 fi  
 
 if [ ! -f ~/.inputrc ]; then
-  ln -s ~/Auxiliary\ Projects/dotfiles/inputrc ~/.inputrc
+  ln -s ~/dotfiles/inputrc ~/.inputrc
 fi
 
 # This loads RVM into a shell session.
@@ -37,7 +41,9 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then . "$HOME/.rvm/scripts/rvm" > /dev/n
 if [[ -s "/usr/local/bin/rvm" ]]  ; 	then . "/usr/local/bin/rvm" > /dev/null; fi		# If RVM is installed system-wide
 
 # IRBRC
-# ruby ~/Auxiliary\ Projects/dotfiles/irbrc
+# ruby ~/dotfiles/irbrc
 
 # Textmate2 Properties
-ln -s ~/Auxiliary\ Projects/dotfiles/tm_properties ~/.tm_properties
+if [ ! -f ~/.tm_properties ]; then
+  ln -s ~/dotfiles/tm_properties ~/.tm_properties
+fi

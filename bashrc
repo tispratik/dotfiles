@@ -38,3 +38,6 @@ if [[ -s "/usr/local/bin/rvm" ]]  ; 	then . "/usr/local/bin/rvm" > /dev/null; fi
 
 # IRBRC
 # ruby ~/Auxiliary\ Projects/dotfiles/irbrc
+
+# Textmate2 Properties
+ln -s ~/Auxiliary\ Projects/dotfiles/tm_properties ~/.tm_properties

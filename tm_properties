@@ -1,0 +1,15 @@
+fontName = "Monaco"
+fontSize = 12
+
+# show the path to the current tab's file in the window title 
+# (replace the 2 instances of 'username' in the string below 
+# with your mac username).
+windowTitle    = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/pkhadloya\w+\/?(.*)|(.+))\z/${2:? – ${2/\A\/Users\/pkhadloya/~/}:${1/\A(?=.)/ – /}}/}"
+#windowTitle = "$TM_FILEPATH"
+
+excludeFiles = "*.{so,pyc,log}"
+excludeDirectories = "{log,tmp}"	# Removes log dir from sidebar
+excludeInFileChooser = "{log,tmp}"
+excludeInBrowser = "{log,tmp}"	# Removes development.log from Cmd + T file search
+excludeInFolderSearch = "{log,tmp}"
+excludeInFileSearch = "{log,tmp}"	# Excludes these folders/files from string search

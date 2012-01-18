@@ -13,3 +13,22 @@ excludeInFileChooser = "{log,tmp}"
 excludeInBrowser = "{log,tmp}"	# Removes development.log from Cmd + T file search
 excludeInFolderSearch = "{log,tmp}"
 excludeInFileSearch = "{log,tmp}"	# Excludes these folders/files from string search
+
+# Default editing configuration
+softWrap = false
+softTabs = true
+tabSize = 2
+
+# File type specific configuration
+[ text ]
+showInvisibles   = true
+
+[ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
+binary           = true
+
+[ source ]
+softTabs         = true
+tabSize          = 2
+
+[ "{README,INSTALL,LICENSE,TODO}" ]
+fileType         = "text.plain"

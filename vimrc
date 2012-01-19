@@ -25,3 +25,5 @@ function! StripWhitespace ()
 endfunction
 noremap <leader>ss :call StripWhitespace ()<CR>
 set list            " Show whitespace characters
+
+match Todo /\s\+$/  " To highlight trailing white spaces http://stackoverflow.com/a/356214/238880

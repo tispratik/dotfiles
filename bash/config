@@ -1,5 +1,3 @@
 # Enable vi editing mode on bash terminal
 set -o vi
-
-HISTSIZE=10000
-export $HISTSIZE
+export HISTSIZE=10000

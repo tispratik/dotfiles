@@ -72,9 +72,9 @@ function cdc() {
 }
 
 # mkdir and cd into it
-function take() { 
+function take() {
     mkdir -p "$1"
-    cd "$1" 
+    cd "$1"
 }
 
 # Processes
@@ -110,6 +110,7 @@ alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias gfa='git fetch --all'
+alias gfarb='gfa && grb'
 alias gfm='git fetch origin master'
 alias gcp='git cherry-pick'
 alias greh='git reset HEAD'

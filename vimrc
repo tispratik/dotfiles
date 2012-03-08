@@ -13,7 +13,7 @@ filetype off
 filetype plugin indent on         " To enable file type detection for syntax highlighting
 set tabstop=2
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_  " Show “invisible” characters
-set mouse=a         " Enable mouse in all modes
+"set mouse=a         " Enable mouse in all modes
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace ()

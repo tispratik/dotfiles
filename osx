@@ -69,6 +69,9 @@ defaults write com.apple.terminal StringEncodings -array 4
 # Enable Dashboard dev mode (allows keeping widgets on the desktop)
 # defaults write com.apple.dashboard devmode -bool true
 
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean YES 
+
 # Show the ~/Library folder
 chflags nohidden ~/Library
 

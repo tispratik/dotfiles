@@ -1,3 +1,0 @@
-# Enable vi editing mode on bash terminal
-set -o vi
-export HISTSIZE=10000

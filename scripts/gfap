@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+git remote | while read a
+do {
+  echo "fetching $a"
+  git fetch $a &
+} done
+echo "waiting..."
+wait
+echo "done"

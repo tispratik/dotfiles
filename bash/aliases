@@ -53,6 +53,7 @@ alias hg='h | grep'
 alias pg='ps -ef | grep'
 alias lsof='lsof -Pnl +M -i4'
 alias lsof6='lsof -Pnl +M -i6'
+alias nst='netstat -anf inet'
 
 # Gnome Terminal
 function gt() { 
@@ -172,10 +173,7 @@ alias r="rake"
 # Rails
 # -----
 alias sc='./script/console'
-alias sg='./script/generate'
-alias sp='./script/plugin'
 alias ss='./script/server'
-alias ts='thin start'
 
 # Crontab
 alias crontab='crontab -i'

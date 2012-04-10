@@ -31,7 +31,11 @@ fi
 # Load the global gitignore file if not existing already
 if [ ! -f ~/.gitignore ]; then
   ln -s ~/dotfiles/gitignore ~/.gitignore
-fi  
+fi
+
+if [ ! -f ~/.screenrc ]; then
+  ln -s ~/dotfiles/screenrc ~/.screenrc
+fi
 
 if [ ! -f ~/.inputrc ]; then
   ln -s ~/dotfiles/inputrc ~/.inputrc

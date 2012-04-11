@@ -111,7 +111,7 @@ alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias gfa='git fetch --all'
-alias gfarb='gfa && grb'
+alias gfarb='gfap && grb'
 alias gfm='git fetch origin master'
 alias gcp='git cherry-pick'
 alias greh='git reset HEAD'
@@ -137,7 +137,7 @@ function gch() {
 }
 
 # Commit pending changes and quote all args as message and then push to remote repo
-function gg() { 
+function gg() {
     git commit -v -a -m "$*"; git push
 }
 
@@ -145,13 +145,13 @@ function gg() {
 alias gcloneb='git clone -b $1 $2'
 
 # Setup a tracking branch from [remote] [branch_name]
-function gbt() { 
-  git branch --track $2 $1/$2 && git checkout $2 
+function gbt() {
+  git branch --track $2 $1/$2 && git checkout $2
 }
 # Quickly clobber a file and checkout
-function grf() { 
+function grf() {
   rm $1
-  git checkout $1 
+  git checkout $1
 }
 # Call from inside an initialized Git repo, with the name of the repo.
 function new-git() {

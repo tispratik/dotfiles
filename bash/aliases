@@ -34,7 +34,6 @@ alias kk='ll'
 
 # Other
 # -----
-alias h='history'
 alias j='jobs -l'
 alias path='echo -e ${PATH//:/\\n}'
 alias c='clear; ls -1'

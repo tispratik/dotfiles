@@ -3,11 +3,12 @@ function my_ip() {
 }
 
 function screenshare() {
-  ( ssh -p20022 -N -R5906:localhost:5900 apollo.rocketfuel.com & )
+  [ $1 ] && local port=$1 || local port=5901
+  ( ssh -p20022 -N -R$port:localhost:5900 apollo.rocketfuel.com & )
 }
 
 function gotoshare() {
-  ( ssh -p20022 -N -L5905:localhost:5905 apollo.rocketfuel.com & )
-  sleep 3
-  open vnc://localhost:5905
+  [ $1 ] && local port=$1 || local port=5902
+  ( ssh -p20022 -N -L$port:localhost:$port apollo.rocketfuel.com & )
+  sleep 3; open vnc://localhost:$port
 }

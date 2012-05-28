@@ -24,10 +24,6 @@ if [ -f ~/.local_settings ]; then
   . ~/.local_settings
 fi
 
-if [ -f ~/.private_settings ]; then
-  source ~/.private_settings
-fi
-
 if [ ! -f ~/.vimrc ]; then
   ln -s ~/dotfiles/vimrc ~/.vimrc
 fi

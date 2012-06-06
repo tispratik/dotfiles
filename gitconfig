@@ -13,3 +13,8 @@
   interactive = auto
 [branch]
   autosetuprebase = always
+  autosetupmerge = true
+[diff]
+  mnemonicprefix = true
+[push]
+  default = tracking

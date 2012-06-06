@@ -52,3 +52,8 @@ if [[ -s "/usr/local/bin/rvm" ]]  ; 	then . "/usr/local/bin/rvm" > /dev/null; fi
 if [ ! -f ~/.tm_properties ]; then
   ln -s ~/dotfiles/tm_properties ~/.tm_properties
 fi
+
+# Gitconfig
+if [ ! -f ~/.gitconfig ]; then
+  ln -s ~/dotfiles/gitconfig ~/.gitconfig
+fi

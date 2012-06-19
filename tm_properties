@@ -20,8 +20,8 @@ softTabs = true
 tabSize = 2
 
 # File type specific configuration
-[ text ]
-showInvisibles   = true
+# [ text ]
+# showInvisibles   = true
 
 [ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
 binary           = true

@@ -4,11 +4,13 @@ function my_ip() {
 
 function screenshare() {
   [ $1 ] && local port=$1 || local port=5901
-  ( ssh -p20022 -N -R$port:localhost:5900 apollo.rocketfuel.com & )
+  ssh -p20022 -N -R ${port}:localhost:5900 apollo.rocketfuel.com &
+  echo NOTE: When you\'re done with the share, kill PID $!
 }
 
 function gotoshare() {
-  [ $1 ] && local port=$1 || local port=5902
-  ( ssh -p20022 -N -L$port:localhost:$port apollo.rocketfuel.com & )
+  [ $1 ] && local port=$1 || local port=5901
+  ssh -p20022 -N -L ${port}:localhost:$port apollo.rocketfuel.com &
+  echo NOTE: When you\'re done with the share, kill PID $!
   sleep 3; open vnc://localhost:$port
 }

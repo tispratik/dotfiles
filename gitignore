@@ -5,3 +5,4 @@
 mkmf.log
 sqlnet.log
 *.tmproj
+postgresql*

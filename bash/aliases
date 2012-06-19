@@ -50,6 +50,7 @@ alias cpr='cp -rpv'
 alias whatismyip="wget -q -O - http://whatismyip.com/automation/n09230945.asp"
 alias hg='history | grep'
 alias pg='ps -ef | grep'
+alias ag='alias | grep'
 alias lsof='lsof -Pnl +M -i4'
 alias lsof6='lsof -Pnl +M -i6'
 alias nst='netstat -anf inet'
@@ -158,13 +159,15 @@ alias gitundo='git reset --soft HEAD^'
 # Ruby
 # ----
 alias r="rake"
-
-# Rails
-# -----
 alias sc='./script/console'
 alias ss='./script/server'
 
+# MySql
+# -----
+alias mysqlvars='mysqladmin variables'
+
 # Crontab
+# -------
 alias crontab='crontab -i'
 
 # Nginx
@@ -219,14 +222,8 @@ function __rm_single_file(){
 function ff() { find . -name '*'$1'*' ; }                 # find a file
 function fe() { find . -name '*'$1'*' -exec $2 {} \; ; }  # find a file and run $2 on it
 
-# Show what is taking up space
-alias diskspace="du -S | sort -n -r |more"
-
 # Show me the size (sorted) of only the folders in this directory
 alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
-
-# Boom => https://github.com/holman/boom
-alias b='boom'
 
 function t {
   #printf "\033]0;%s\007"

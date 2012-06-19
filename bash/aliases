@@ -164,7 +164,8 @@ alias ss='./script/server'
 
 # MySql
 # -----
-alias mysqlvars='mysqladmin variables'
+alias mysqlvars='mysqladmin variables' # To see what values a running MySQL server is using
+alias mysqldhelp='mysqld --verbose --help'
 
 # Crontab
 # -------

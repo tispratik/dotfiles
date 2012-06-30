@@ -1,29 +1,81 @@
-set ls=2            " allways show status line
-set hlsearch        " highlight searches
-set showcmd         " display incomplete commands
-"set showmatch	    " Show matching brackets/braces/parantheses.
-set incsearch       " do incremental searching
-set ruler           " show the cursor position all the time
-set nobackup        " do not keep a backup file
-set number          " show line numbers
-set ignorecase      " ignore case when searching
-set notitle         " When using vim in an xterm it renames the title of that window to 'Thanks for flying vim' on exit. So turn it off
-syntax on           " syntax highlighing
-filetype off
-filetype plugin indent on         " To enable file type detection for syntax highlighting
+set ls=2                        " allways show status line
+set showcmd                     " display incomplete commands
+set ruler                       " show the cursor position all the time
+set nobackup                    " do not keep a backup file
+set notitle                     " when using vim in an xterm it renames the title of that window to 'Thanks for flying vim' on exit. So turn it off
+set list                        " show whitespace characters
+set listchars=tab:▸\ ,eol:¬     " chars to be shown
+set virtualedit=all             " allow the cursor to go in to 'invalid' places http://www.uvm.edu/~gcd/2008/12/virtualedit-in-vim/ (move beyond the actual end of a line)
+set backspace=indent,eol,start  " backspace works in Insert mode, but won't delete over line breaks, or automatically-inserted indentation
+set iskeyword+=_,$,@,%,#        " none of these are word dividers, so that commands like cw change the whole word separated by _ or $ etc
+set ttimeoutlen=50              " make Esc key faster
+set scrolloff=3                 " automatically scroll text into view, so that search hits always have some "context" lines before and after.
+"set mouse=a                    " enable full mouse support in the console
+
+set wildmenu                    " enables a menu at the bottom of the vim/gvim window
+set wildmode=list:longest,full
+
+set hlsearch                    " highlight searches
+set incsearch                   " do incremental searching
+set ignorecase                  " ignore case when searching
+set smartcase                   " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set showmatch                   " show matching brackets/braces/parantheses.
+set gdefault                    " search/replace "globally" (on a line) by default
+
+syntax on                       " syntax highlighing
+set expandtab                   " convert tabs to spaces
 set tabstop=2
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_  " Show “invisible” characters
-"set mouse=a         " Enable mouse in all modes
+set shiftwidth=2                " number of space characters inserted for indentation
+set softtabstop=2               " when hitting backspace <BS>, pretend like a tab is removed, even if spaces
+set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
+
+set autoindent                  " always set autoindenting on
+set copyindent                  " copy indentation on new lines
+set smartindent                 " indent on new blocks
+
+filetype off
+filetype plugin indent on       " To enable file type detection for syntax highlighting
+
+if has("gui_macvim")
+  set showtabline=2             " always show tabs in gvim
+  set guifont=Monaco:h14
+
+  set cursorline
+  set cursorcolumn
+
+  set guioptions-=T             " Deactivate top toolbar
+  set background=dark
+  colorscheme macvim
+
+  hi cursorline   guibg=#222222
+  hi cursorcolumn guibg=#222222
+endif
+
+" Remap keys, Vim supports several editing modes - normal, insert, replace, visual, select, command-line and operator-pending.
+" The general syntax of a map command is: {cmd} {attr} {lhs} {rhs}
+" Ref: http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
+nnoremap ; :                    " in normal(n) mode non(no)-recursive(re) map ; to : http://stackoverflow.com/a/3776182/238880
+cmap cwd lcd %:p:h
+nmap <Esc> :nohlsearch<CR>:<CR>
+
+"Command+Alt+Arrows to navigate between tabs
+nmap <D-A-Left> :tabprevious<CR>
+nmap <D-A-Right> :tabnext<CR>
+
+"Command+Shift+Arrows to navigate between splits
+nmap <silent> <D-S-Up> :wincmd k<CR>
+nmap <silent> <D-S-Down> :wincmd j<CR>
+nmap <silent> <D-S-Left> :wincmd h<CR>
+nmap <silent> <D-S-Right> :wincmd l<CR>
+
+match Todo /\s\+$/  " To highlight trailing white spaces http://stackoverflow.com/a/356214/238880
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace ()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  :%s/\s\+$//e
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace ()<CR>
-set list            " Show whitespace characters
-
-match Todo /\s\+$/  " To highlight trailing white spaces http://stackoverflow.com/a/356214/238880

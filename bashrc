@@ -15,9 +15,6 @@ source ~/dotfiles/nanorc
 # RVM
 source ~/dotfiles/rvmrc
 
-# Ruby Debug
-# source ~/dotfiles/rdebugrc
-
 #source ~/dotfiles/bash/gitconfig
 
 if [ -f ~/.local_settings ]; then
@@ -39,6 +36,14 @@ fi
 
 if [ ! -f ~/.inputrc ]; then
   ln -s ~/dotfiles/inputrc ~/.inputrc
+fi
+
+if [ ! -f ~/.pryrc ]; then
+  ln -s ~/dotfiles/pryrc ~/.pryrc
+fi
+
+if [ ! -f ~/.rdebugrc ]; then
+  ln -s ~/dotfiles/rdebugrc ~/.rdebugrc
 fi
 
 # This loads RVM into a shell session.

@@ -9,56 +9,25 @@ if [ `uname` == 'Darwin' ]; then
   source ~/dotfiles/bash/mac_aliases
 fi
 
-# Nano
-source ~/dotfiles/nanorc
-
 # RVM
 source ~/dotfiles/rvmrc
 
-#source ~/dotfiles/bash/gitconfig
+FILES=(local_settings vimrc gitignore gitconfig screenrc pryrc rdebugrc tm_properties)
+ELEMENTS=${#FILES[@]}
 
-if [ -f ~/.local_settings ]; then
-  . ~/.local_settings
-fi
+for (( i=0;i<$ELEMENTS;i++)); do
+  FILE=${FILES[${i}]}
+  if [ ! -f ~/.${FILE} ]; then
+    ln -s ~/dotfiles/${FILE} ~/.${FILE}
+    echo Symlinking ${FILE}
+  fi
+done
 
-if [ ! -f ~/.vimrc ]; then
-  ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-fi
-
-# Load the global gitignore file if not existing already
-if [ ! -f ~/.gitignore ]; then
-  ln -s ~/dotfiles/gitignore ~/.gitignore
-fi
-
-if [ ! -f ~/.screenrc ]; then
-  ln -s ~/dotfiles/screenrc ~/.screenrc
-fi
-
-if [ ! -f ~/.inputrc ]; then
-  ln -s ~/dotfiles/inputrc ~/.inputrc
-fi
-
-if [ ! -f ~/.pryrc ]; then
-  ln -s ~/dotfiles/pryrc ~/.pryrc
-fi
-
-if [ ! -f ~/.rdebugrc ]; then
-  ln -s ~/dotfiles/rdebugrc ~/.rdebugrc
+if [ ! -d ~/.vim ]; then
+  ln -s ~/dotfiles/vim ~/.vim
+  echo Symlinking .vim directory
 fi
 
 # This loads RVM into a shell session.
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then . "$HOME/.rvm/scripts/rvm" > /dev/null; fi		# If RVM is installed in user's home
-if [[ -s "/usr/local/bin/rvm" ]]  ; 	then . "/usr/local/bin/rvm" > /dev/null; fi		# If RVM is installed system-wide
-
-# IRBRC
-# ruby ~/dotfiles/irbrc
-
-# Textmate2 Properties
-if [ ! -f ~/.tm_properties ]; then
-  ln -s ~/dotfiles/tm_properties ~/.tm_properties
-fi
-
-# Gitconfig
-if [ ! -f ~/.gitconfig ]; then
-  ln -s ~/dotfiles/gitconfig ~/.gitconfig
-fi
+if [[ -s "/usr/local/bin/rvm" ]]  ; then . "/usr/local/bin/rvm" > /dev/null; fi		# If RVM is installed system-wide

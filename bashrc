@@ -22,7 +22,7 @@ if [ -f ~/.local_settings ]; then
 fi
 
 if [ ! -f ~/.vimrc ]; then
-  ln -s ~/dotfiles/vimrc ~/.vimrc
+  ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 fi
 
 # Load the global gitignore file if not existing already

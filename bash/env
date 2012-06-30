@@ -42,7 +42,10 @@ fi
 # Suppress duplicate entries by using the & switch.
 # Also prevent ls, bg, fg, exit and other commands without parameters to be stored in history.
 export HISTIGNORE="&:ls:[bf]g:exit:h:l:c:..:...:kb:g:gl:"
+
+export HISTCONTROL=erasedups # when adding an item to history, delete itentical commands upstream
 shopt -s histappend                      # append to history, don't overwrite it
+
 # Save and reload the history after each command finishes - to sync history between terminals
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTFILESIZE=10000¬

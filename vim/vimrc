@@ -22,7 +22,12 @@ set smartcase                   " ignore case if search pattern is all lowercase
 set showmatch                   " show matching brackets/braces/parantheses.
 set gdefault                    " search/replace "globally" (on a line) by default
 
+call pathogen#infect()
+
 syntax on                       " syntax highlighing
+filetype off
+filetype plugin indent on       " To enable file type detection for syntax highlighting
+
 set expandtab                   " convert tabs to spaces
 set tabstop=2
 set shiftwidth=2                " number of space characters inserted for indentation
@@ -32,9 +37,6 @@ set shiftround                  " use multiple of shiftwidth when indenting with
 set autoindent                  " always set autoindenting on
 set copyindent                  " copy indentation on new lines
 set smartindent                 " indent on new blocks
-
-filetype off
-filetype plugin indent on       " To enable file type detection for syntax highlighting
 
 if has("gui_macvim")
   set showtabline=2             " always show tabs in gvim

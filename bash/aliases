@@ -34,6 +34,7 @@ alias kk='ll'
 
 # Other
 # -----
+alias refresh='. ~/.bashrc'
 alias j='jobs -l'
 alias path='echo -e ${PATH//:/\\n}'
 alias c='clear; ls -1'

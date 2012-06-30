@@ -1,7 +1,9 @@
 Installation: Clone the repository in your home directory
+
     cd ~ && git clone git://github.com/tispratik/dotfiles.git
 
 Backup your existing bashrc and symlink to the one in the repository
+
     mv ~/.bashrc ~/.bashrc_bak && ln -s ~/dotfiles/bashrc ~/.bashrc
 
 Where possible, Vim plugins are installed as git submodules. Check these out by running the commands:

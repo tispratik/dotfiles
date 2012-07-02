@@ -12,7 +12,7 @@ fi
 # RVM
 source ~/dotfiles/rvmrc
 
-FILES=(local_settings vimrc gitignore gitconfig screenrc pryrc rdebugrc tm_properties)
+FILES=(vimrc gitignore gitconfig screenrc pryrc rdebugrc tm_properties)
 ELEMENTS=${#FILES[@]}
 
 for (( i=0;i<$ELEMENTS;i++)); do
@@ -22,6 +22,10 @@ for (( i=0;i<$ELEMENTS;i++)); do
     echo Symlinking ${FILE}
   fi
 done
+
+if [ -f ~/.local_settings ]; then
+  . ~/.local_settings
+fi
 
 if [ ! -d ~/.vim ]; then
   ln -s ~/dotfiles/vim ~/.vim

@@ -10,7 +10,8 @@ set backspace=indent,eol,start  " backspace works in Insert mode, but won't dele
 set iskeyword+=_,$,@,%,#        " none of these are word dividers, so that commands like cw change the whole word separated by _ or $ etc
 set ttimeoutlen=50              " make Esc key faster
 set scrolloff=3                 " automatically scroll text into view, so that search hits always have some "context" lines before and after.
-"set mouse=a                    " enable full mouse support in the console
+set mouse=a                     " enable full mouse support in the console
+set clipboard+=unnamed          " yanks to system clipboard else we would not be able to copy text from vim to another application
 
 set wildmenu                    " enables a menu at the bottom of the vim/gvim window
 set wildmode=list:longest,full

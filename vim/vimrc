@@ -2,6 +2,7 @@ set ls=2                        " allways show status line
 set showcmd                     " display incomplete commands
 set ruler                       " show the cursor position all the time
 set nobackup                    " do not keep a backup file
+set noswapfile                  " do not create backup swp files
 set notitle                     " when using vim in an xterm it renames the title of that window to 'Thanks for flying vim' on exit. So turn it off
 set list                        " show whitespace characters
 set listchars=tab:▸\ ,eol:¬     " chars to be shown
@@ -12,6 +13,9 @@ set ttimeoutlen=50              " make Esc key faster
 set scrolloff=3                 " automatically scroll text into view, so that search hits always have some "context" lines before and after.
 set mouse=a                     " enable full mouse support in the console
 set clipboard+=unnamed          " yanks to system clipboard else we would not be able to copy text from vim to another application
+set history=1000                " remember more commands and search history
+set undolevels=1000             " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
 
 set wildmenu                    " enables a menu at the bottom of the vim/gvim window
 set wildmode=list:longest,full
@@ -58,7 +62,15 @@ endif
 " The general syntax of a map command is: {cmd} {attr} {lhs} {rhs}
 " Reference - http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
 nnoremap ; :                    " in normal(n) mode non(no)-recursive(re) map ; to : http://stackoverflow.com/a/3776182/238880
+let mapleader=","               " change the mapleader from \ to ,
 cmap cwd lcd %:p:h
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+map <S-Enter> O<Esc>  " Hit Enter to create new line before current line
+map <CR> o<Esc>       " Hit Shift+Enter to add a new line after the current line
 
 "Command+Alt+Arrows to navigate between tabs
 nmap <D-A-Left> :tabprevious<CR>

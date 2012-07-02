@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

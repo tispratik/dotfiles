@@ -61,16 +61,27 @@ endif
 " Remap keys, Vim supports several editing modes - normal, insert, replace, visual, select, command-line and operator-pending.
 " The general syntax of a map command is: {cmd} {attr} {lhs} {rhs}
 " Reference - http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
-nnoremap ; :                    " in normal(n) mode non(no)-recursive(re) map ; to : http://stackoverflow.com/a/3776182/238880
+nnoremap ; :
 let mapleader=","               " change the mapleader from \ to ,
 cmap cwd lcd %:p:h
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+set pastetoggle=<F2>
 
 map <S-Enter> O<Esc>  " Hit Enter to create new line before current line
 map <CR> o<Esc>       " Hit Shift+Enter to add a new line after the current line
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+
+" force yourself to stop using the arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
 "Command+Alt+Arrows to navigate between tabs
 nmap <D-A-Left> :tabprevious<CR>

@@ -55,6 +55,10 @@ if has("gui_macvim")
 
   hi cursorline   guibg=#222222
   hi cursorcolumn guibg=#222222
+
+  " So that <C-T> does not open a new tab
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> :CommandT<CR>
 endif
 
 " Remap keys, Vim supports several editing modes - normal, insert, replace, visual, select, command-line and operator-pending.

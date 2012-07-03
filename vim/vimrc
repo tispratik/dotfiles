@@ -32,7 +32,7 @@ syntax on                       " syntax highlighing
 filetype off
 filetype plugin indent on       " To enable file type detection for syntax highlighting
 
-set expandtab                   " convert tabs to spaces
+set expandtab                   " convert tabs to spaces. This wont affect existing tab characters. To change all the existing tab characters to match the current tab settings, use :retab
 set tabstop=2
 set shiftwidth=2                " number of space characters inserted for indentation
 set softtabstop=2               " when hitting backspace <BS>, pretend like a tab is removed, even if spaces

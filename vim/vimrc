@@ -1,4 +1,4 @@
-set ls=2                        " allways show status line
+set ls=2                        " always show status line
 set showcmd                     " display incomplete commands
 set ruler                       " show the cursor position all the time
 set nobackup                    " do not keep a backup file
@@ -15,7 +15,7 @@ set mouse=a                     " enable full mouse support in the console
 set clipboard+=unnamed          " yanks to system clipboard else we would not be able to copy text from vim to another application
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class
+"set wildignore=*.swp,*.bak,*.pyc,*.class
 
 set wildmenu                    " enables a menu at the bottom of the vim/gvim window
 set wildmode=list:longest,full
@@ -25,7 +25,7 @@ set incsearch                   " do incremental searching
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set showmatch                   " show matching brackets/braces/parantheses.
-set gdefault                    " search/replace "globally" (on a line) by default
+set gdefault                    " search/replace globally (on a line) by default
 
 call pathogen#infect()
 
@@ -62,7 +62,7 @@ endif
 " The general syntax of a map command is: {cmd} {attr} {lhs} {rhs}
 " Reference - http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
 nnoremap ; :
-let mapleader=","                 " change the mapleader from \ to ,
+let mapleader=","               " change the mapleader from \ to ,
 cmap cwd lcd %:p:h
 nmap <silent> ,/ :nohlsearch<CR>  " unhighlight search results
 cmap w!! w !sudo tee % >/dev/null "  when you forgot to sudo before editing a file that requires root privileges

@@ -52,7 +52,7 @@ if has("gui_macvim")
 
   set guioptions-=T             " Deactivate top toolbar
   set background=dark
-  colorscheme macvim
+  colorscheme koehler
 
   hi cursorline   guibg=#222222
   hi cursorcolumn guibg=#222222
@@ -62,8 +62,10 @@ endif
 " The general syntax of a map command is: {cmd} {attr} {lhs} {rhs}
 " Reference - http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
 nnoremap ; :
-let mapleader=","               " change the mapleader from \ to ,
+let mapleader=","                 " change the mapleader from \ to ,
 cmap cwd lcd %:p:h
+nmap <silent> ,/ :nohlsearch<CR>  " unhighlight search results
+cmap w!! w !sudo tee % >/dev/null "  when you forgot to sudo before editing a file that requires root privileges
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>

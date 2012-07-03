@@ -17,15 +17,14 @@ set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
 "set wildignore=*.swp,*.bak,*.pyc,*.class
 
-set wildmenu                    " enables a menu at the bottom of the vim/gvim window
-set wildmode=list:longest,full
+"set wildmenu                    " enables a menu at the bottom of the vim/gvim window
+"set wildmode=list:longest,full
 
 set hlsearch                    " highlight searches
 set incsearch                   " do incremental searching
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set showmatch                   " show matching brackets/braces/parantheses.
-set gdefault                    " search/replace globally (on a line) by default
 
 call pathogen#infect()
 

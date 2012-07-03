@@ -1,5 +1,8 @@
+" This must be first, because it changes other options as side effect
+set nocompatible
+
 set ls=2                        " always show status line
-set showcmd                     " display incomplete commands
+set showcmd                     " display incomplete commands in the last line of the screen
 set ruler                       " show the cursor position all the time
 set nobackup                    " do not keep a backup file
 set noswapfile                  " do not create backup swp files
@@ -15,10 +18,14 @@ set mouse=a                     " enable full mouse support in the console
 set clipboard+=unnamed          " yanks to system clipboard else we would not be able to copy text from vim to another application
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
-"set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set nostartofline               " Stop certain movements from always going to the first character of a line.
+set ruler
+set number                      " Set line numbers
+highlight LineNr ctermfg=grey   " This would change the foreground colour for LineNr on a character terminal to grey
 
-"set wildmenu                    " enables a menu at the bottom of the vim/gvim window
-"set wildmode=list:longest,full
+set wildmenu                    " Better command-line completion
+set wildmode=list:longest,full
 
 set hlsearch                    " highlight searches
 set incsearch                   " do incremental searching
@@ -55,6 +62,7 @@ if has("gui_macvim")
 
   hi cursorline   guibg=#222222
   hi cursorcolumn guibg=#222222
+  highlight LineNr guifg=#323232
 
   " So that <C-T> does not open a new tab
   macmenu &File.New\ Tab key=<nop>

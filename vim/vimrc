@@ -126,8 +126,14 @@ nmap <silent> <D-S-Down> :wincmd j<CR>
 nmap <silent> <D-S-Left> :wincmd h<CR>
 nmap <silent> <D-S-Right> :wincmd l<CR>
 
+" Easily split windows
 nnoremap <leader>v <C-w>v<C-w>l   " Split window vertically and switch to it, <C-w>v (new vertical split) <C-w>l (switch to it)
 nnoremap <leader>h <C-w>s<C-w>j   " Split window horizontally and switch to it
+" Easy movements into splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 match Todo /\s\+$/  " To highlight trailing white spaces http://stackoverflow.com/a/356214/238880
 

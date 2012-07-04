@@ -13,7 +13,7 @@ set virtualedit=all             " allow the cursor to go in to 'invalid' places 
 set backspace=indent,eol,start  " backspace works in Insert mode, but won't delete over line breaks, or automatically-inserted indentation
 set iskeyword+=_,$,@,%,#        " none of these are word dividers, so that commands like cw change the whole word separated by _ or $ etc
 set ttimeoutlen=50              " make Esc key faster
-set scrolloff=3                 " automatically scroll text into view, so that search hits always have some "context" lines before and after.
+set scrolloff=3                 " automatically scroll text into view, so that search hits always have some 'context' lines before and after.
 set mouse=a                     " enable full mouse support in the console
 set clipboard+=unnamed          " yanks to system clipboard else we would not be able to copy text from vim to another application
 set history=1000                " remember more commands and search history
@@ -22,7 +22,12 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set nostartofline               " Stop certain movements from always going to the first character of a line.
 set ruler
 set number                      " Set line numbers
-highlight LineNr ctermfg=grey   " This would change the foreground colour for LineNr on a character terminal to grey
+
+set wrap!                       " no word wrapping
+set textwidth=0                 " disable automatic text wrapping
+
+au FocusLost * :wa              " Save file on loosing focus
+highlight LineNr ctermfg=grey
 
 set wildmenu                    " Better command-line completion
 set wildmode=list:longest,full
@@ -75,8 +80,12 @@ endif
 nnoremap ; :
 let mapleader=","               " change the mapleader from \ to ,
 cmap cwd lcd %:p:h
-nmap <silent> ,/ :nohlsearch<CR>  " unhighlight search results
+nnoremap <leader><space> :nohlsearch<cr>  " unhighlight search results
 cmap w!! w !sudo tee % >/dev/null "  when you forgot to sudo before editing a file that requires root privileges
+
+" make the tab key match bracket pairs as <tab> is a hell of a lot easier to type than %
+nnoremap <tab> %
+vnoremap <tab> %
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -91,10 +100,21 @@ vmap Q gq
 nmap Q gqap
 
 " force yourself to stop using the arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+" Remap F1 key to ESC
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
 
 "Command+Alt+Arrows to navigate between tabs
 nmap <D-A-Left> :tabprevious<CR>
@@ -105,6 +125,9 @@ nmap <silent> <D-S-Up> :wincmd k<CR>
 nmap <silent> <D-S-Down> :wincmd j<CR>
 nmap <silent> <D-S-Left> :wincmd h<CR>
 nmap <silent> <D-S-Right> :wincmd l<CR>
+
+nnoremap <leader>v <C-w>v<C-w>l   " Split window vertically and switch to it, <C-w>v (new vertical split) <C-w>l (switch to it)
+nnoremap <leader>h <C-w>s<C-w>j   " Split window horizontally and switch to it
 
 match Todo /\s\+$/  " To highlight trailing white spaces http://stackoverflow.com/a/356214/238880
 

@@ -52,3 +52,6 @@
 [submodule "vim/bundle/vim-l9"]
 	path = vim/bundle/vim-l9
 	url = https://github.com/clones/vim-l9.git
+[submodule "vim/bundle/vim-railscasts-theme"]
+	path = vim/bundle/vim-railscasts-theme
+	url = https://github.com/jpo/vim-railscasts-theme.git

@@ -63,7 +63,7 @@ if has("gui_macvim")
 
   " set guioptions-=T             " Deactivate top toolbar
   set background=dark
-  colorscheme koehler
+  colorscheme railscasts
 
   hi cursorline   guibg=#222222
   hi cursorcolumn guibg=#222222

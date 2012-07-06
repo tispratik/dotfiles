@@ -26,7 +26,7 @@ set number                      " Set line numbers
 set wrap!                       " no word wrapping
 set textwidth=0                 " disable automatic text wrapping
 
-au FocusLost * :wa              " Save file on loosing focus
+"au FocusLost * :wa              " Save file on loosing focus
 highlight LineNr ctermfg=grey
 
 set wildmenu                    " Better command-line completion
@@ -61,7 +61,7 @@ if has("gui_macvim")
   set cursorline
   set cursorcolumn
 
-  set guioptions-=T             " Deactivate top toolbar
+  " set guioptions-=T             " Deactivate top toolbar
   set background=dark
   colorscheme koehler
 
@@ -81,6 +81,7 @@ nnoremap ; :
 let mapleader=","               " change the mapleader from \ to ,
 cmap cwd lcd %:p:h
 nnoremap <leader><space> :nohlsearch<cr>  " unhighlight search results
+nmap <leader>. :FufCoverageFile<cr>
 cmap w!! w !sudo tee % >/dev/null "  when you forgot to sudo before editing a file that requires root privileges
 
 " make the tab key match bracket pairs as <tab> is a hell of a lot easier to type than %
@@ -100,16 +101,16 @@ vmap Q gq
 nmap Q gqap
 
 " force yourself to stop using the arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
+" nnoremap j gj
+" nnoremap k gk
 
 " Remap F1 key to ESC
 inoremap <F1> <ESC>

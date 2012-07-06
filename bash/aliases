@@ -164,6 +164,7 @@ alias gitundo='git reset --soft HEAD^'
 alias r="bundle exec rake"
 alias sc='bundle exec script/console'
 alias ss='bundle exec script/server'
+alias ssd='bundle exec script/server --debugger'
 
 # MySql
 # -----

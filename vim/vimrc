@@ -1,35 +1,37 @@
 " This must be first, because it changes other options as side effect
 set nocompatible
 
-set ls=2                        " always show status line
-set showcmd                     " display incomplete commands in the last line of the screen
-set ruler                       " show the cursor position all the time
-set nobackup                    " do not keep a backup file
-set noswapfile                  " do not create backup swp files
-set notitle                     " when using vim in an xterm it renames the title of that window to 'Thanks for flying vim' on exit. So turn it off
-set list                        " show whitespace characters
-set listchars=tab:▸\ ,eol:¬     " chars to be shown
-set virtualedit=all             " allow the cursor to go in to 'invalid' places http://www.uvm.edu/~gcd/2008/12/virtualedit-in-vim/ (move beyond the actual end of a line)
-set backspace=indent,eol,start  " backspace works in Insert mode, but won't delete over line breaks, or automatically-inserted indentation
-set iskeyword+=_,$,@,%,#        " none of these are word dividers, so that commands like cw change the whole word separated by _ or $ etc
-set ttimeoutlen=50              " make Esc key faster
-set scrolloff=3                 " automatically scroll text into view, so that search hits always have some 'context' lines before and after.
-set mouse=a                     " enable full mouse support in the console
-set clipboard+=unnamed          " yanks to system clipboard else we would not be able to copy text from vim to another application
-set history=1000                " remember more commands and search history
-set undolevels=1000             " use many muchos levels of undo
+set autoread                             " auto reload whenthe file is changed from the outside
+set ls=2                                 " always show status line
+set showcmd                              " display incomplete commands in the last line of the screen
+set ruler                                " show the cursor position all the time
+set nobackup                             " do not keep a backup file
+set noswapfile                           " do not create backup swp files
+set notitle                              " when using vim in an xterm it renames the title of that window to 'Thanks for flying vim' on exit. So turn it off
+set list                                 " show whitespace characters
+set listchars=tab:▸\ ,eol:¬              " chars to be shown
+set virtualedit=all                      " allow the cursor to go in to 'invalid' places http://www.uvm.edu/~gcd/2008/12/virtualedit-in-vim/ (move beyond the actual end of a line)
+set backspace=indent,eol,start           " backspace works in Insert mode, but won't delete over line breaks, or automatically-inserted indentation
+set iskeyword+=_,$,@,%,#                 " none of these are word dividers, so that commands like cw change the whole word separated by _ or $ etc
+set ttimeoutlen=50                       " make Esc key faster
+set scrolloff=3                          " automatically scroll text into view, so that search hits always have some 'context' lines before and after.
+set mouse=a                              " enable full mouse support in the console
+set clipboard+=unnamed                   " yanks to system clipboard else we would not be able to copy text from vim to another application
+set history=1000                         " remember more commands and search history
+set undolevels=1000                      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
-set nostartofline               " Stop certain movements from always going to the first character of a line.
+set nostartofline                        " Stop certain movements from always going to the first character of a line.
 set ruler
-set number                      " Set line numbers
+set number                               " Set line numbers
+set shellcmdflag=-ic                     " To make Vim’s :! shell behave like your command prompt having bash aliases etc
 
-set wrap!                       " no word wrapping
-set textwidth=0                 " disable automatic text wrapping
+set wrap!                                " no word wrapping
+set textwidth=0                          " disable automatic text wrapping
 
-"au FocusLost * :wa              " Save file on loosing focus
+                                         " au FocusLost * :wa                                                                                                                       " Save file on loosing focus
 highlight LineNr ctermfg=grey
 
-set wildmenu                    " Better command-line completion
+set wildmenu                             " Better command-line completion
 set wildmode=list:longest,full
 
 set hlsearch                    " highlight searches
@@ -61,13 +63,14 @@ if has("gui_macvim")
   set cursorline
   set cursorcolumn
 
-  " set guioptions-=T             " Deactivate top toolbar
-  set background=dark
+  " set guioptions-=T           " Deactivate top toolbar
+  " set background=dark
   colorscheme railscasts
+  " autocmd FileType * if &filetype == 'css' | colorscheme koehler
 
-  hi cursorline   guibg=#222222
-  hi cursorcolumn guibg=#222222
-  highlight LineNr guifg=#323232
+  " hi cursorline   guibg=#222222
+  " hi cursorcolumn guibg=#222222
+  " highlight LineNr guifg=#323232
 
   " So that <C-T> does not open a new tab
   macmenu &File.New\ Tab key=<nop>

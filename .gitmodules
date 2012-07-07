@@ -55,3 +55,6 @@
 [submodule "vim/bundle/vim-railscasts-theme"]
 	path = vim/bundle/vim-railscasts-theme
 	url = https://github.com/jpo/vim-railscasts-theme.git
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git

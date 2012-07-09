@@ -23,6 +23,11 @@ for (( i=0;i<$ELEMENTS;i++)); do
   fi
 done
 
+if [ ! -f ~/.tmux.conf ]; then
+  ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+  echo Symlinking tmux conf
+fi
+
 if [ -f ~/.local_settings ]; then
   . ~/.local_settings
 fi

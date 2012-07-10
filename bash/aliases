@@ -34,6 +34,7 @@ alias kk='ll'
 
 # Other
 # -----
+alias vi='vim'
 alias refresh='. ~/.bashrc'
 alias j='jobs -l'
 alias path='echo -e ${PATH//:/\\n}'
@@ -55,9 +56,11 @@ alias ag='alias | grep'
 alias lsof='lsof -Pnl +M -i4'
 alias lsof6='lsof -Pnl +M -i6'
 alias nst='netstat -anf inet'
+alias less='less --RAW-CONTROL-CHARS'
+alias muz='mux' # To protect against typo
 
 # Gnome Terminal
-function gt() { 
+function gt() {
   gnome-terminal -t $1 --working-directory ~ --window-with-profile=pratik --geometry=180x40 &
 }
 
@@ -69,8 +72,8 @@ function cdh() {
  cd ~/projects/$*
 }
 
-function cdc() { 
-    cd $1; ls 
+function cdc() {
+    cd $1; ls
 }
 
 # mkdir and cd into it

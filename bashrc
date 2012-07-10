@@ -40,3 +40,4 @@ fi
 # This loads RVM into a shell session.
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then . "$HOME/.rvm/scripts/rvm" > /dev/null; fi		# If RVM is installed in user's home
 if [[ -s "/usr/local/bin/rvm" ]]  ; then . "/usr/local/bin/rvm" > /dev/null; fi		# If RVM is installed system-wide
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator

@@ -12,15 +12,15 @@ alias df='df -kh'
 
 # The 'ls' family
 # ---------------
-alias lx='ls -lXB'					  # sort by extension
-alias lk='ls -lSr'					  # sort by size
-alias l='clear; ls -1'					  # long list
-alias la='ls -lA'					  # show hidden files
-alias laf='ls -a | grep "^\."'  			  # hidden files only
-alias lad='ls -ad .* | grep / | more -p'  		  # hidden directories only
-alias ll="ls -lA | egrep '^l'"               		  # list symlinked files
-alias lt='ls -ltr'					  # sort by date
-alias lm='ls -al |more'					  # pipe through 'more'
+alias lx='ls -lXB'            # sort by extension
+alias lk='ls -lSr'            # sort by size
+alias l='clear; ls -1'            # long list
+alias la='ls -lA'           # show hidden files
+alias laf='ls -a | grep "^\."'          # hidden files only
+alias lad='ls -ad .* | grep / | more -p'        # hidden directories only
+alias ll="ls -lA | egrep '^l'"                    # list symlinked files
+alias lt='ls -ltr'            # sort by date
+alias lm='ls -al |more'           # pipe through 'more'
 alias ld="ls -l | egrep '^d'"
 alias lf="ls -l | egrep -v '^d'"
 
@@ -58,6 +58,7 @@ alias lsof6='lsof -Pnl +M -i6'
 alias nst='netstat -anf inet'
 alias less='less --RAW-CONTROL-CHARS'
 alias muz='mux' # To protect against typo
+alias tmuz='tmux' # To protect against typo
 
 # Gnome Terminal
 function gt() {

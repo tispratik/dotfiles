@@ -108,7 +108,7 @@ alias grbc='git rebase --continue'
 alias gfa='git fetch --all'
 alias gfarb='gfap && git rebase origin/master'
 alias gfm='git fetch origin master'
-alias gfmrb='git fetch origin master && git rebase origin/master'
+alias gfmrb='git fetch origin && git rebase origin/master'
 alias gcp='git cherry-pick'
 alias gss='git stash save'
 alias gsc='git stash clear'
@@ -117,14 +117,7 @@ alias gsl='git stash list'
 alias gitreflog='git reflog --date=local'
 alias gbdate='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
 alias gcloneb='git clone -b $1 $2' # Clone a specific branch
-
-function glog(){
-  if [ "$1" = "" ]; then
-    git log --all --pretty=format:"%h %cd | %s (%an)" --graph
-  else
-    git log --all --pretty=format:"%h %cd | %s (%an)" --max-count="$1" --graph
-  fi
-}
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit --date=relative --tags"
 
 function gadd(){
   git add "$@"; git status -s

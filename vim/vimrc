@@ -157,4 +157,4 @@ noremap <leader>ss :call StripWhitespace ()<CR>
 
 " Plugins
 " Ack
-let g:ackprg="ack -H --nocolor --nogroup --column --ignore-dir=tmp"
+let g:ackprg="ack -H --nocolor --nogroup --column --ignore-dir=tmp --ignore-dir=log"

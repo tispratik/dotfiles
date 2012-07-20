@@ -8,8 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -21,7 +21,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -34,7 +34,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/pkhadloya/.rvm/gems/ruby-1.9.2-p290@fuel/bin:/Users/pkhadloya/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/pkhadloya/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/pkhadloya/.rvm/bin:~/bin:~/.bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/sphinx/bin:/usr/local/git/bin:~/dotfiles/scripts:/Users/pkhadloya/Projects/repo/rrepo:/Users/pkhadloya/.rvm/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:~/bin:~/.bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/sphinx/bin:/usr/local/git/bin:~/dotfiles/scripts:/Users/pkhadloya/Projects/repo/rrepo
 
 # File Modifications
 # ------------------
@@ -206,5 +206,8 @@ alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
 
 function t {
   #printf "\033]0;%s\007"
-  title $1
+  #title $1
+  echo -e "\033];$1\007"
 }
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 

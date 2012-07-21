@@ -35,7 +35,9 @@ alias kk='ll'
 # Other
 # -----
 alias vi='vim'
-alias refresh='. ~/.bashrc'
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias refresh='. ~/.zshrc'
 alias j='jobs -l'
 alias path='echo -e ${PATH//:/\\n}'
 alias c='clear; ls -1'
@@ -47,7 +49,6 @@ alias md='mkdir -p'
 alias e='exit'
 alias kb="kill -9 %1 %2"
 alias grep='grep --color=auto'   # Color found text
-#alias chmod='chmod -c'
 alias cpr='cp -rpv'
 alias whatismyip="wget -q -O - http://whatismyip.com/automation/n09230945.asp"
 alias hg='history | grep'
@@ -59,29 +60,6 @@ alias nst='netstat -anf inet'
 alias less='less --RAW-CONTROL-CHARS'
 alias muz='mux' # To protect against typo
 alias tmuz='tmux' # To protect against typo
-
-# Gnome Terminal
-function gt() {
-  gnome-terminal -t $1 --working-directory ~ --window-with-profile=pratik --geometry=180x40 &
-}
-
-# Quicker cd
-# ----------
-alias cdd='cd -'  # goto last dir cd'ed from
-
-function cdh() {
- cd ~/projects/$*
-}
-
-function cdc() {
-    cd $1; ls
-}
-
-# mkdir and cd into it
-function take() {
-    mkdir -p "$1"
-    cd "$1"
-}
 
 # Processes
 # ---------
@@ -172,53 +150,6 @@ alias mysqldhelp='mysqld --verbose --help'
 # -------
 alias crontab='crontab -i'
 
-# Nginx
-# -----
-function nginx_stop() {
-    ps ax | grep nginx | cut -d " " -f 1 | xargs sudo kill -9
-}
-function nginx_start() {
-    sudo /opt/nginx/sbin/nginx
-}
-
-# From http://github.com/suztomo/dotfiles
-# ---------------------------------------
-function rmf(){
-    for file in $*
-    do
-        __rm_single_file $file
-    done
-}
-
-function __rm_single_file(){
-    if ! [ -d ~/.Trash/ ]
-    then
-        command /bin/mkdir ~/.Trash
-    fi
-
-    if ! [ $# -eq 1 ]
-    then
-        echo "__rm_single_file: 1 argument required but $# passed."
-        exit
-    fi
-
-    if [ -e $1 ]
-    then
-        BASENAME=`basename $1`
-        NAME=$BASENAME
-        COUNT=0
-        while [ -e ~/.Trash/$NAME ]
-        do
-            COUNT=$(($COUNT+1))
-            NAME="$BASENAME.$COUNT"
-        done
-
-        command /bin/mv $1 ~/.Trash/$NAME
-    else
-        echo "No such file or directory: $file"
-    fi
-}
-
 # File & strings related functions
 # --------------------------------
 function ff() { find . -name '*'$1'*' ; }                 # find a file
@@ -226,8 +157,3 @@ function fe() { find . -name '*'$1'*' -exec $2 {} \; ; }  # find a file and run 
 
 # Show me the size (sorted) of only the folders in this directory
 alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
-
-function t {
-  #printf "\033]0;%s\007"
-  title $1
-}

@@ -1,213 +1,21 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+DISABLE_AUTO_TITLE="true" # Do not set terminal title automatically
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git, rvm)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:~/bin:~/.bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/sphinx/bin:/usr/local/git/bin:~/dotfiles/scripts:/Users/pkhadloya/Projects/repo/rrepo
+export PATH=~/bin:~/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/sphinx/bin:/usr/local/git/bin:~/dotfiles/scripts:$PATH
 
-# File Modifications
-# ------------------
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-# -> Prevents accidentally clobbering files.
-
-# Disk Utility
-# ------------
-alias du='du -h'
-alias df='df -kh'
-
-# The 'ls' family
-# ---------------
-alias lx='ls -lXB'            # sort by extension
-alias lk='ls -lSr'            # sort by size
-alias l='clear; ls -1'            # long list
-alias la='ls -lA'           # show hidden files
-alias laf='ls -a | grep "^\."'          # hidden files only
-alias lad='ls -ad .* | grep / | more -p'        # hidden directories only
-alias ll="ls -lA | egrep '^l'"                    # list symlinked files
-alias lt='ls -ltr'            # sort by date
-alias lm='ls -al |more'           # pipe through 'more'
-alias ld="ls -l | egrep '^d'"
-alias lf="ls -l | egrep -v '^d'"
-
-# spelling typos
-# --------------
-alias xs='cd'
-alias vf='cd'
-alias moer='more'
-alias moew='more'
-alias kk='ll'
-
-# Other
-# -----
-alias vi='vim'
-alias refresh='. ~/.bashrc'
-alias j='jobs -l'
-alias path='echo -e ${PATH//:/\\n}'
-alias c='clear; ls -1'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias reload='source ~/bin/dotfiles/bash/aliases'
-alias md='mkdir -p'
-alias e='exit'
-alias kb="kill -9 %1 %2"
-alias grep='grep --color=auto'   # Color found text
-#alias chmod='chmod -c'
-alias cpr='cp -rpv'
-alias whatismyip="wget -q -O - http://whatismyip.com/automation/n09230945.asp"
-alias hg='history | grep'
-alias pg='ps -ef | grep'
-alias ag='alias | grep'
-alias lsof='lsof -Pnl +M -i4'
-alias lsof6='lsof -Pnl +M -i6'
-alias nst='netstat -anf inet'
-alias less='less --RAW-CONTROL-CHARS'
-alias muz='mux' # To protect against typo
-alias tmuz='tmux' # To protect against typo
-
-# Processes
-# ---------
-alias tu='top -o cpu' # cpu
-alias tm='top -o vsize' # memory
-function my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ; }
-function pp() { my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"} ; }
-
-# Git
-# ---
-alias ungit="find . -name '.git' -exec rm -rf {} \;"
-alias gb='git branch'
-alias gc='git commit -vm'
-alias gd='git diff --color'
-alias gdm='git diff master --color'
-alias gl='git pull'
-alias gp='git push'
-alias g='git status -s'
-alias gconf='cat .git/config'
-alias gk='gitk &'
-alias grb='git rebase'
-alias grba='git rebase --abort'
-alias grbc='git rebase --continue'
-alias gfa='git fetch --all'
-alias gfarb='gfap && git rebase origin/master'
-alias gfm='git fetch origin master'
-alias gfmrb='git fetch origin && git rebase origin/master'
-alias gcp='git cherry-pick'
-alias gss='git stash save'
-alias gsc='git stash clear'
-alias gsa='git stash apply'
-alias gsl='git stash list'
-alias gitreflog='git reflog --date=local'
-alias gbdate='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
-alias gcloneb='git clone -b $1 $2' # Clone a specific branch
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit --date=relative --tags"
-
-function gadd(){
-  git add "$@"; git status -s
-}
-
-function gco(){
-  git checkout "$@"; git status -s
-}
-
-# Commit pending changes and quote all args as message and then push to remote repo
-function gg() {
-    git commit -v -a -m "$*"; git push
-}
-
-# Setup a tracking branch from [remote] [branch_name]
-function gbt() {
-  git branch --track $2 $1/$2 && git checkout $2
-}
-
-# Quickly clobber a file and checkout
-function grf() {
-  rm $1
-  git checkout $1
-}
-
-# Call from inside an initialized Git repo, with the name of the repo.
-function new-git() {
-  ssh git@example.com "mkdir $1.git && cd $1.git && git --bare init"
-  git remote add origin git@example.com:$1.git
-  git push origin master
-  git config branch.master.remote origin
-  git config branch.master.merge refs/heads/master
-  git config push.default current
-}
-
-# Git undo last commit
-alias gitundo='git reset --soft HEAD^'
-
-# Ruby
-# ----
-alias r="bundle exec rake"
-alias sc='bundle exec script/console'
-alias ss='bundle exec script/server'
-alias ssd='bundle exec script/server --debugger'
-
-# MySql
-# -----
-alias mysqlvars='mysqladmin variables' # To see what values a running MySQL server is using
-alias mysqldhelp='mysqld --verbose --help'
-
-# Crontab
-# -------
-alias crontab='crontab -i'
-
-# Nginx
-# -----
-function nginx_stop() {
-    ps ax | grep nginx | cut -d " " -f 1 | xargs sudo kill -9
-}
-function nginx_start() {
-    sudo /opt/nginx/sbin/nginx
-}
-
-# File & strings related functions
-# --------------------------------
-function ff() { find . -name '*'$1'*' ; }                 # find a file
-function fe() { find . -name '*'$1'*' -exec $2 {} \; ; }  # find a file and run $2 on it
-
-# Show me the size (sorted) of only the folders in this directory
-alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
-
-function t {
-  #printf "\033]0;%s\007"
-  #title $1
-  echo -e "\033];$1\007"
-}
+source ~/dotfiles/aliases
+source ~/dotfiles/zsh/functions
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 

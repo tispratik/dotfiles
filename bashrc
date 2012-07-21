@@ -1,7 +1,7 @@
 source ~/dotfiles/bash/colors
 source ~/dotfiles/bash/paths
 source ~/dotfiles/bash/env
-source ~/dotfiles/bash/aliases
+source ~/dotfiles/aliases
 source ~/dotfiles/bash/functions
 source ~/dotfiles/bash/completions
 

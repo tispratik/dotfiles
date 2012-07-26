@@ -34,9 +34,6 @@
 [submodule "vim/bundle/vim-ruby"]
   path = vim/bundle/vim-ruby
   url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/bundle/ctrlp"]
-  path = vim/bundle/ctrlp
-  url = https://bitbucket.org/kien/ctrlp.vim
 [submodule "vim/bundle/nerdcommenter"]
   path = vim/bundle/nerdcommenter
   url = https://github.com/scrooloose/nerdcommenter.git

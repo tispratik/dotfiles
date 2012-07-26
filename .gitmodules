@@ -34,33 +34,27 @@
 [submodule "vim/bundle/vim-ruby"]
   path = vim/bundle/vim-ruby
   url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/bundle/ctrlp"]
-  path = vim/bundle/ctrlp
-  url = https://bitbucket.org/kien/ctrlp.vim
 [submodule "vim/bundle/nerdcommenter"]
   path = vim/bundle/nerdcommenter
   url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/ack"]
-	path = vim/bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
+  path = vim/bundle/ack
+  url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/YankRing"]
-	path = vim/bundle/YankRing
-	url = https://github.com/vim-scripts/YankRing.vim.git
+  path = vim/bundle/YankRing
+  url = https://github.com/vim-scripts/YankRing.vim.git
 [submodule "vim/bundle/FuzzyFinder"]
-	path = vim/bundle/FuzzyFinder
-	url = https://github.com/vim-scripts/FuzzyFinder.git
+  path = vim/bundle/FuzzyFinder
+  url = https://github.com/vim-scripts/FuzzyFinder.git
 [submodule "vim/bundle/vim-l9"]
-	path = vim/bundle/vim-l9
-	url = https://github.com/clones/vim-l9.git
-[submodule "vim/bundle/vim-railscasts-theme"]
-	path = vim/bundle/vim-railscasts-theme
-	url = https://github.com/jpo/vim-railscasts-theme.git
+  path = vim/bundle/vim-l9
+  url = https://github.com/clones/vim-l9.git
 [submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
+  path = vim/bundle/tabular
+  url = https://github.com/godlygeek/tabular.git
 [submodule "vim/bundle/vim-ruby-refactoring"]
-	path = vim/bundle/vim-ruby-refactoring
-	url = https://github.com/ecomba/vim-ruby-refactoring
+  path = vim/bundle/vim-ruby-refactoring
+  url = https://github.com/ecomba/vim-ruby-refactoring
 [submodule "vim/bundle/matchit.zip"]
-	path = vim/bundle/matchit.zip
-	url = git://github.com/benjifisher/matchit.zip.git
+  path = vim/bundle/matchit.zip
+  url = git://github.com/benjifisher/matchit.zip.git

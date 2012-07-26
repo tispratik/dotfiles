@@ -34,6 +34,9 @@
 [submodule "vim/bundle/vim-ruby"]
   path = vim/bundle/vim-ruby
   url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/bundle/ctrlp"]
+  path = vim/bundle/ctrlp
+  url = https://bitbucket.org/kien/ctrlp.vim
 [submodule "vim/bundle/nerdcommenter"]
   path = vim/bundle/nerdcommenter
   url = https://github.com/scrooloose/nerdcommenter.git
@@ -58,3 +61,6 @@
 [submodule "vim/bundle/matchit.zip"]
   path = vim/bundle/matchit.zip
   url = git://github.com/benjifisher/matchit.zip.git
+[submodule "vim/bundle/vim-railscasts-theme"]
+	path = vim/bundle/vim-railscasts-theme
+	url = https://github.com/tispratik/vim-railscasts-theme.git

@@ -18,4 +18,8 @@ export PATH=~/bin:~/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/us
 source ~/dotfiles/aliases
 source ~/dotfiles/zsh/functions
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+if [ -f ~/.local_settings ]; then
+  . ~/.local_settings
+fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

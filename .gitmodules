@@ -61,3 +61,9 @@
 [submodule "vim/bundle/vim-railscasts-theme"]
 	path = vim/bundle/vim-railscasts-theme
 	url = https://github.com/tispratik/vim-railscasts-theme
+[submodule "vim/bundle/SQLUtilities"]
+	path = vim/bundle/SQLUtilities
+	url = https://github.com/vim-scripts/SQLUtilities.git
+[submodule "vim/bundle/Align"]
+	path = vim/bundle/Align
+	url = https://github.com/vim-scripts/Align.git

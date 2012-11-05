@@ -94,7 +94,7 @@ vnoremap <tab> %
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-set pastetoggle=<F2>
+set pastetoggle=<F2> " Enter paste/copy mode, so that vim does not try to indent lines when copying
 
 map <S-Enter> O<Esc>  " Hit Enter to create new line before current line
 map <CR> o<Esc>       " Hit Shift+Enter to add a new line after the current line

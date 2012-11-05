@@ -74,7 +74,7 @@ alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gb='git branch'
 alias gc='git commit -vm'
 alias gd='git diff --color'
-alias gdm='git diff master --color'
+alias gdw='git diff --word-diff=porcelain'
 alias gl='git pull'
 alias gp='git push'
 alias g='git status -sb'

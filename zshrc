@@ -35,6 +35,11 @@ if [ -f ~/.local_settings ]; then
   . ~/.local_settings
 fi
 
+if [ ! -f ~/.irbrc ]; then
+  ln -s ~/dotfiles/irbrc ~/.irbrc
+  echo "Symlinking irbrc"
+fi
+
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 eval "$(rbenv init -)"

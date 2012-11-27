@@ -108,7 +108,7 @@ function gco(){
 
 # Commit pending changes and quote all args as message and then push to remote repo
 function gg() {
-    git commit -v -a -m "$*"; git push
+    #git commit -v -a -m "$*"; git push
 }
 
 # Setup a tracking branch from [remote] [branch_name]
@@ -135,12 +135,18 @@ function new-git() {
 # Git undo last commit
 alias gitundo='git reset --soft HEAD^'
 
+# Gerrit
+# ------
+function grc() {
+  ssh -p 29418 gerrit.rfiserve.net gerrit query status:open owner:Pratik project:$1/$2 $*
+}
+
+
 # Ruby
 # ----
 alias r="bundle exec rake"
 alias sc='bundle exec script/console'
 alias ss='bundle exec script/server'
-alias ssd='bundle exec script/server --debugger'
 
 # MySql
 # -----

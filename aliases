@@ -153,10 +153,6 @@ alias ss='bundle exec script/server'
 alias mysqlvars='mysqladmin variables' # To see what values a running MySQL server is using
 alias mysqldhelp='mysqld --verbose --help'
 
-# Crontab
-# -------
-alias crontab='crontab -i'
-
 # File & strings related functions
 # --------------------------------
 function ff() { find . -name '*'$1'*' ; }                 # find a file

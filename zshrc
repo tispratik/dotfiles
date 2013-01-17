@@ -43,3 +43,4 @@ fi
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 eval "$(rbenv init -)"
+unsetopt correct_all # To stop zsh from autocorrecting commands

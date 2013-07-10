@@ -2,23 +2,38 @@ function t {
   echo -e "\033];$1\007"
 }
 
-function rvm_ruby_prompt {
-  if (declare -f rvm > /dev/null) {
-      if [[ -x $MY_RUBY_HOME ]]
-      then ruby -v | sed 's/\([^(]*\).*/\1/'
-      fi
-  }
+function my_ip() {
+  ifconfig | grep 'broadcast' | awk '{print $2}'
 }
 
-function gadd(){
-  git add "$@"; git status -s
+function screenshare() {
+  [ $1 ] && local port=$1 || local port=5901
+  ssh -p20022 -N -R ${port}:localhost:5900 apollo.rocketfuel.com &
+  echo NOTE: When you\'re done with the share, kill PID $!
 }
 
-function gco(){
-  git checkout "$@"; git status -s
+function gotoshare() {
+  [ $1 ] && local port=$1 || local port=5901
+  ssh -p20022 -N -L ${port}:localhost:$port apollo.rocketfuel.com &
+  echo NOTE: When you\'re done with the share, kill PID $!
+  sleep 3; open vnc://localhost:$port
 }
 
-# Setup a tracking branch from [remote] [branch_name]
-function gbt() {
-  git branch --track $2 $1/$2 && git checkout $2
+function watcher() {
+  WATCHERTIME=$1
+  WATCHERFILE=/tmp/watcher$$
+  shift
+  while true; do
+    WATCHERHEIGHT=$(($LINES - 5))
+    ( eval $* ) | tail -n ${WATCHERHEIGHT} > ${WATCHERFILE} 2>/dev/null
+    clear
+    /bin/echo -n "Every ${WATCHERTIME} seconds - "
+    date
+    /bin/echo
+    cat ${WATCHERFILE}
+    \rm -f ${WATCHERFILE}
+    /bin/echo
+    /bin/echo "=="
+    sleep ${WATCHERTIME}
+  done
 }

@@ -1,1 +1,4 @@
 --ignore-dir=tmp
+--ignore-dir=log
+--ignore-dir=db/data
+--ignore-dir=fuel/db/test

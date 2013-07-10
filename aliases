@@ -51,7 +51,6 @@ alias kb="kill -9 %1 %2"
 alias grep='grep --color=auto'   # Color found text
 alias cpr='cp -rpv'
 alias whatismyip="wget -q -O - http://whatismyip.com/automation/n09230945.asp"
-alias hg='history | grep'
 alias pg='ps -ef | grep'
 alias ag='alias | grep'
 alias lsof='lsof -Pnl +M -i4'
@@ -97,30 +96,6 @@ alias gitreflog='git reflog --date=local'
 alias gbdate='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
 alias gcloneb='git clone -b $1 $2' # Clone a specific branch
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit --date=relative --tags"
-
-function gadd(){
-  git add "$@"; git status -s
-}
-
-function gco(){
-  git checkout "$@"; git status -s
-}
-
-# Commit pending changes and quote all args as message and then push to remote repo
-function gg() {
-    #git commit -v -a -m "$*"; git push
-}
-
-# Setup a tracking branch from [remote] [branch_name]
-function gbt() {
-  git branch --track $2 $1/$2 && git checkout $2
-}
-
-# Quickly clobber a file and checkout
-function grf() {
-  rm $1
-  git checkout $1
-}
 
 # Call from inside an initialized Git repo, with the name of the repo.
 function new-git() {

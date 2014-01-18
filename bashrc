@@ -35,3 +35,5 @@ if [ ! -d ~/.vim ]; then
 fi
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+# export PATH=$PATH:~/bin/jad158g.mac.intel/

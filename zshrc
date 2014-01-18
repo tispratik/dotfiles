@@ -44,3 +44,5 @@ fi
 
 eval "$(rbenv init -)"
 unsetopt correct_all # To stop zsh from autocorrecting commands
+
+export PATH=$PATH:~/bin/jad158g.mac.intel/

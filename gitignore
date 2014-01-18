@@ -6,7 +6,7 @@ mkmf.log
 sqlnet.log
 *.tmproj
 postgresql*
-.bundle
 vendor/bundle
 bin
 .rbenv-version
+*.class

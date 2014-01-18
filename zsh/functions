@@ -37,3 +37,8 @@ function watcher() {
     sleep ${WATCHERTIME}
   done
 }
+
+# git
+function gcma() {
+  git commit --amend --reuse-message HEAD && git stash && gfmrb && upload master
+}

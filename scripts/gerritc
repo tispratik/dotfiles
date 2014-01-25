@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'git'
+require 'terminal-table'
+require 'json'
+require 'pp'
+require 'date'
+
+g = Git.open('.')
+
+gerrit = 'ssh -p 29418 gerrit.rfiserve.net gerrit'
+project = `git remote -v | grep origin | head -1 | cut -d : -f 3 | cut -d / -f 2- | cut -d ' ' -f 1`.strip
+commit = g.object('HEAD').sha
+
+# command = "#{gerrit} #{ARGV.join(' ')} -- #{commit}"
+
+rows = []
+
+command = "#{gerrit} query --format=JSON status:merged owner:pratik limit:4 project:ui/fuel"
+p command
+
+def print_commit(hash)
+  return if hash["type"] # {"type"=>"stats", "rowCount"=>5, "runTimeMilliseconds"=>73}
+  
+  table = Terminal::Table.new do |t|
+    t << ["Project", hash["project"]]
+    t << :separator
+    t.add_row ["Number", hash["number"]]
+    t.add_row ["Owner", hash["owner"]["name"]]
+    t.add_row ["Url", hash["url"]]
+    t.add_row ["Message", hash["commitMessage"]]
+    t.add_row ["Created", Time.at(hash["createdOn"])]
+    t.add_row ["Open", hash["open"]]
+    t.add_row ["Status", hash["status"]]
+  end  
+  
+  puts table
+end
+
+IO.popen(command) do |f| 
+  json_arr = f.readlines
+
+  json_arr.each do |json|
+    hash = JSON.parse(json)
+    # pp hash
+    print_commit(hash)
+  end
+  next
+end

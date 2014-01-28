@@ -24,6 +24,7 @@ def print_event(hash)
   author = hash["author"]
   comment = hash["comment"]
   approvals = hash["approvals"]
+  change_number = change['number']
   
   message = ''
   if approvals
@@ -35,7 +36,7 @@ def print_event(hash)
   
   title = "#{change['project']} - #{hash['type']}"
   subtitle = "#{change['commitMessage']}"
-  command = "terminal-notifier -title '#{title}' -subtitle $'#{subtitle}' -message $'#{message}' -open '#{change['url']}'"
+  command = "terminal-notifier -title '#{title}' -subtitle $'#{subtitle}' -message $'#{message}' -open '#{change['url']}' -group #{change_number} -remove #{change_number}"
   p command
   system command
 end

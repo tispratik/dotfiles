@@ -23,10 +23,20 @@ def print_event(hash)
   patch_set = hash["patchSet"]
   author = hash["author"]
   comment = hash["comment"]
+  approvals = hash["approvals"]
+  
+  message = ''
+  if approvals
+    approvals.each do |approval|
+      message += "#{approval['type']}: #{approval['value']}"
+    end  
+  end
+  message += "\nOwner: #{change['owner']['name']}"
   
   title = "#{change['project']} - #{hash['type']}"
-  subtitle = "#{change['subject']}"
-  command = "terminal-notifier -title #{title} -subtitle #{subtitle} -message 'Hey' -open #{change['url']}"
+  subtitle = "#{change['commitMessage']}"
+  command = "terminal-notifier -title '#{title}' -subtitle $'#{subtitle}' -message $'#{message}' -open '#{change['url']}'"
+  p command
   system command
 end
 

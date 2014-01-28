@@ -12,6 +12,9 @@ Where possible, Vim plugins are installed as git submodules. Check these out by 
     git submodule init
     git submodule update
 
+### Symlink vim directory
+    ln -s ~/dotfiles/vim ~/.vim
+
 ### Adding Plugin Bundles for Vim ###
 
 Plugins that are published on github can be installed as submodules. For example, to install the [JavaScript bundle][jsbun], follow these steps:

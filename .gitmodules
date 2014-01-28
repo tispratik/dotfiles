@@ -57,7 +57,7 @@
   url = https://github.com/ecomba/vim-ruby-refactoring
 [submodule "vim/bundle/matchit.zip"]
   path = vim/bundle/matchit.zip
-  url = git://github.com/bejifisher/matchit.zip.git
+  url = git://github.com/benjifisher/matchit.zip.git
 [submodule "vim/bundle/vim-railscasts-theme"]
 	path = vim/bundle/vim-railscasts-theme
 	url = https://github.com/tispratik/vim-railscasts-theme

@@ -36,7 +36,7 @@ def print_event(hash)
   
   title = "#{change['project']} - #{hash['type']}"
   subtitle = "#{change['commitMessage']}"
-  command = "terminal-notifier -title 'Ⴤ #{title}' -subtitle $'#{subtitle}' -message $'\xE2\x99\x92 #{message}' -open '#{change['url']}' -group #{change_number} -remove #{change_number}"
+  command = "terminal-notifier -title $'#{title}' -subtitle $'#{subtitle}' -message $'\xE2\x99\x92 #{message}' -open '#{change['url']}' -group #{change_number} -remove #{change_number}"
   p command
   system command
 end

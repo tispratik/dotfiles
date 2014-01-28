@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'git'
+require 'json'
+require 'pp'
+require 'date'
+
+g = Git.open('.')
+
+gerrit = 'ssh -p 29418 gerrit.rfiserve.net gerrit'
+project = `git remote -v | grep origin | head -1 | cut -d : -f 3 | cut -d / -f 2- | cut -d ' ' -f 1`.strip
+commit = g.object('HEAD').sha
+
+command = "#{gerrit} stream-events"
+p command
+
+def print_event(hash)
+  # terminal-notifier -title '💰' -message 'Check your Apple stock!' -subtitle 'Finished' -message 'Imported 42 contacts.'
+  # -open 'http://finance.yahoo.com/q?s=AAPL'
+
+  change = hash["change"]
+  patch_set = hash["patchSet"]
+  author = hash["author"]
+  comment = hash["comment"]
+  
+  title = "#{change['project']} - #{hash['type']}"
+  subtitle = "#{change['subject']}"
+  command = "terminal-notifier -title #{title} -subtitle #{subtitle} -message 'Hey' -open #{change['url']}"
+  system command
+end
+
+IO.popen(command) do |io|
+  while(line = io.gets)
+    hash = JSON.parse(line)
+    print_event(hash)
+  end
+end

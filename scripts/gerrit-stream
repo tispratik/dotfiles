@@ -12,7 +12,7 @@ gerrit = 'ssh -p 29418 gerrit.rfiserve.net gerrit'
 project = `git remote -v | grep origin | head -1 | cut -d : -f 3 | cut -d / -f 2- | cut -d ' ' -f 1`.strip
 commit = g.object('HEAD').sha
 
-command = "#{gerrit} stream-events"
+command = "#{gerrit} stream-events 2>&1"
 p command
 
 def print_event(hash)
@@ -20,23 +20,31 @@ def print_event(hash)
   # -open 'http://finance.yahoo.com/q?s=AAPL'
 
   change = hash["change"]
+  change_type = change["type"]
   patch_set = hash["patchSet"]
+  patch_set_number = patch_set["number"]
   author = hash["author"]
   comment = hash["comment"]
   approvals = hash["approvals"]
   change_number = change['number']
+  project_name = change['project']
   
   message = ''
   if approvals
     approvals.each do |approval|
-      message += "#{approval['type']}: #{approval['value']}"
+      value = approval['value'].to_i
+      value = (value > 0 && value != 0) ? "+#{value}" : "#{value}"
+      message += "#{approval['type']}: #{value}"
     end  
   end
-  message += "\nOwner: #{change['owner']['name']}"
+  message += "\n#{patch_set['author']['username']}"
   
-  title = "#{change['project']} - #{hash['type']}"
-  subtitle = "#{change['commitMessage']}"
-  command = "terminal-notifier -title $'#{title}' -subtitle $'#{subtitle}' -message $'\xE2\x99\x92 #{message}' -open '#{change['url']}' -group #{change_number} -remove #{change_number}"
+  title = "#{change['subject']}"
+  subtitle = "#{project_name}"
+  subtitle += "#{change_type}" unless change_type == 'comment-added'
+  subtitle += "PS: #{patch_set_number}" unless change_type == 'comment-added'
+  message = comment if comment
+  command = "terminal-notifier -title $'#{title}' -subtitle $'#{subtitle}' -message $'#{message}' -open '#{change['url']}' -group #{change_number} -remove #{change_number}"
   p command
   system command
 end

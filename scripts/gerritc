@@ -15,8 +15,6 @@ commit = g.object('HEAD').sha
 
 # command = "#{gerrit} #{ARGV.join(' ')} -- #{commit}"
 
-rows = []
-
 command = "#{gerrit} query --format=JSON status:merged owner:pratik limit:4 project:ui/fuel"
 p command
 

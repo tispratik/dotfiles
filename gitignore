@@ -7,6 +7,7 @@ sqlnet.log
 *.tmproj
 postgresql*
 vendor/bundle
+.bundler
 bin
 .rbenv-version
 *.class

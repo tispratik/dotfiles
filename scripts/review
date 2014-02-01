@@ -10,8 +10,6 @@ project = `git remote -v | grep origin | head -1 | cut -d : -f 3 | cut -d / -f 2
 commit = g.object('HEAD').sha
 reviewers = ARGV
 
-reviewers.each do |reviewer|
-  command = "#{gerrit} set-reviewers --project #{project} --add #{reviewer} -- #{commit}"
-  p command
-  system command
-end
+command = "#{gerrit} set-reviewers --project #{project} -a #{reviewers.join(" -a ")} -- #{commit}"
+p command
+system command

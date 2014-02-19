@@ -65,7 +65,6 @@ if has("gui_macvim")
 
   " set guioptions-=T           " Deactivate top toolbar
   " set background=dark
-  colorscheme railscasts
   " autocmd FileType * if &filetype == 'css' | colorscheme koehler
 
   " hi cursorline   guibg=#222222
@@ -172,3 +171,6 @@ autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+" Vim Airline
+let g:airline#extensions#tabline#enabled = 1

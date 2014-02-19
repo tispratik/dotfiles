@@ -33,3 +33,8 @@ As well as checkout out the git repo into the
 
     git add .
     git ci -m "Added the javascript bundle"
+
+### Removing a vim plugin
+If you are using a git 1.8+ you can simply run the following command to remove a vim plugin (ex: vim-railscasts-theme) and then remove the directory.
+    git submodule deinit vim/bundle/vim-railscasts-theme
+    rm -rf vim/bundle/vim-railscasts-theme/

@@ -43,5 +43,7 @@ If you are using a git 1.8+ you can simply run the following command to remove a
 
 ### Updating all submodules
 
-    git submodule update --remote --merge
+Updates all submodules and also recursively updates submodules of submodules
+
+    git submodule update --init --remote --merge --recursive
     git add vim/bundle && git commit -m

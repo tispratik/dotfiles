@@ -1,6 +1,3 @@
-[submodule "vim/bundle/vim-fugitive"]
-  path = vim/bundle/vim-fugitive
-  url = git://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/vim-coffee-script"]
   path = vim/bundle/vim-coffee-script
   url = https://github.com/kchmck/vim-coffee-script.git
@@ -22,9 +19,6 @@
 [submodule "vim/bundle/vim-markdown"]
   path = vim/bundle/vim-markdown
   url = https://github.com/tpope/vim-markdown.git
-[submodule "vim/bundle/nerdtree"]
-  path = vim/bundle/nerdtree
-  url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/supertab"]
   path = vim/bundle/supertab
   url = https://github.com/ervandew/supertab.git
@@ -34,18 +28,9 @@
 [submodule "vim/bundle/vim-ruby"]
   path = vim/bundle/vim-ruby
   url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/bundle/nerdcommenter"]
-  path = vim/bundle/nerdcommenter
-  url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/ack"]
   path = vim/bundle/ack
   url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/YankRing"]
-  path = vim/bundle/YankRing
-  url = https://github.com/vim-scripts/YankRing.vim.git
-[submodule "vim/bundle/FuzzyFinder"]
-  path = vim/bundle/FuzzyFinder
-  url = https://github.com/vim-scripts/FuzzyFinder.git
 [submodule "vim/bundle/vim-l9"]
   path = vim/bundle/vim-l9
   url = https://github.com/clones/vim-l9.git
@@ -58,9 +43,6 @@
 [submodule "vim/bundle/matchit.zip"]
   path = vim/bundle/matchit.zip
   url = git://github.com/benjifisher/matchit.zip.git
-[submodule "vim/bundle/vim-railscasts-theme"]
-	path = vim/bundle/vim-railscasts-theme
-	url = https://github.com/tispratik/vim-railscasts-theme
 [submodule "vim/bundle/SQLUtilities"]
 	path = vim/bundle/SQLUtilities
 	url = https://github.com/vim-scripts/SQLUtilities.git

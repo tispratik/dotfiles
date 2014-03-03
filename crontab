@@ -1,2 +1,2 @@
 # Alert every 20 minutes
-*/20 * * * * DISPLAY=:0.0 /usr/local/bin/terminal-notifier -title "10-10-10" -subtitle "Stop staring at the monitor" -group 202020 -remove 202020  &> /tmp/cron.log
+*/20 * * * * DISPLAY=:0.0 /usr/local/bin/terminal-notifier -title "20-20-20" -subtitle "Stop staring at the monitor" -group 202020 -remove 202020  &> /tmp/cron.log

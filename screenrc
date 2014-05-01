@@ -1,4 +1,49 @@
 startup_message off
-hardstatus on
-hardstatus alwayslastline
-hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "@
+vbell off
+defutf8 on
+defscrollback 1024
+nonblock on
+
+# Fix stupid screen overwriting
+altscreen on
+# erase background with current bg color
+defbce "on"
+
+
+# Some decryption hints:
+# %{= KW}     background light black (aka dark gray) with foreground light white
+# %{= wb}     background dark white (ake light gray) with foreground dark blue
+# %-Lw        all windows before the current window.
+# %n%f %t     current window number, flags and title.
+# %+Lw        all windows after the current window.
+# %-=         pad remaining spaces.
+# %H          hostname.
+# %M%d %s     month and day (MmmDD) and current time (HH:MM).
+
+# hardstatusline
+# hardstatus on
+# hardstatus alwayslastline
+# hardstatus string "%{= gk}%-Lw%{= rW}%50> %n%f* %t %{-}%+Lw%< %= %{= Gk} %H %{= rW} %l %{= Gk} %0c %M%d %{-}"
+# hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%< %{= kG}%-=%c:%s%{-}'
+# hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%<'
+# hardstatus string "%{.kG}%-Lw%{.KW}%n%f %t%{-}%+Lw %=%{..G} %H %{..W} %d/%m %C%a "
+
+caption always "%{= gk}%-Lw%{= rW}%50> %n%f* %t %{-}%+Lw%< %= %{= Gk} %H %{= rW} %l %{= Gk} %0c %M%d %{-}"
+# caption always "%{= KW}%-Lw%{= wb}%n %t %{= KW}%+Lw %-=| ${USER}@%H | %M%d %c%{-}"
+# caption always '%{= dg} %H %{G}| %{B}%l %{G}|%=%?%{d}%-w%?%{r}(%{d}%n %t%? {%u} %?%{r})%{d}%?%+w%?%=%{G}| %{B}%M %d %c:%s '
+
+# Detach on hangup
+autodetach on
+
+#startups
+#--------
+
+# screen -t emacs emacs -nw
+screen -t misc
+
+# with corresponding settings in .Xresources file
+# Ctrl-Tab
+bindkey "^[[27;5;9~" next
+
+# Ctrl-Shift-Tab
+bindkey "^[[27;6;9~" prev

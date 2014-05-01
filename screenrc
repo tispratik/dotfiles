@@ -1,7 +1,7 @@
 startup_message off
 vbell off
 defutf8 on
-defscrollback 1024
+defscrollback 300000
 nonblock on
 
 # Fix stupid screen overwriting
@@ -28,7 +28,7 @@ defbce "on"
 # hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%<'
 # hardstatus string "%{.kG}%-Lw%{.KW}%n%f %t%{-}%+Lw %=%{..G} %H %{..W} %d/%m %C%a "
 
-caption always "%{= gk}%-Lw%{= rW}%50> %n%f* %t %{-}%+Lw%< %= %{= wk} %H %{= rW} %l %{= yk} %0c %M%d %{-}"
+caption always "%{= gk}%-Lw%{= rW}%50> %n%f* %t %{-}%+Lw%< %= %{= wk} %H %{= yk} %0c %M%d %{-}"
 # caption always "%{= KW}%-Lw%{= wb}%n %t %{= KW}%+Lw %-=| ${USER}@%H | %M%d %c%{-}"
 # caption always '%{= dg} %H %{G}| %{B}%l %{G}|%=%?%{d}%-w%?%{r}(%{d}%n %t%? {%u} %?%{r})%{d}%?%+w%?%=%{G}| %{B}%M %d %c:%s '
 

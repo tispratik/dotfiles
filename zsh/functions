@@ -42,3 +42,13 @@ function watcher() {
 function gcma() {
   git commit --amend --reuse-message HEAD && git stash && gfmrb && upload master
 }
+
+# What is the current Unix epoch?
+function now_epoch() {
+  date +%s
+}
+
+# What is Local timestamp for a given unix epoch?
+function when_epoch() {
+  echo Local time for $1 seconds since epoch is $(date -r $1 +"%Y/%m/%d %H:%M:%S")
+}

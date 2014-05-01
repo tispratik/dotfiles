@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="bira"
+ZSH_THEME="philips"
 
 DISABLE_AUTO_TITLE="true" # Do not set terminal title automatically
 
@@ -46,3 +46,5 @@ eval "$(rbenv init -)"
 unsetopt correct_all # To stop zsh from autocorrecting commands
 
 export PATH=$PATH:~/bin/jad158g.mac.intel/
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

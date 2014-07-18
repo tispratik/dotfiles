@@ -11,3 +11,4 @@ vendor/bundle
 bin
 .rbenv-version
 *.class
+*.iml

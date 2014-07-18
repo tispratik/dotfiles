@@ -40,7 +40,11 @@ function watcher() {
 
 # git
 function gcma() {
-  git commit --amend --reuse-message HEAD && git stash && gfmrb && upload master
+  git add -p && git commit --amend --reuse-message HEAD && git stash && gfmrb
+}
+
+function gcmau() {
+  gcma && upload master
 }
 
 # What is the current Unix epoch?

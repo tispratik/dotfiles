@@ -9,7 +9,9 @@ DISABLE_AUTO_TITLE="true" # Do not set terminal title automatically
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git ruby rails heroku ant aws brew bundler capistrano gem git-prompt git-remote-branch jira knife mvn
+mysql node pep8 osx postgres pylint python rake rbenv rsync rvm scala sbt screen ssh-agent sudo tmux
+vagrant vundle virtualenv web-search xcode zeus)
 
 source $ZSH/oh-my-zsh.sh
 

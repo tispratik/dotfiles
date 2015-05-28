@@ -18,7 +18,7 @@ alias l='clear; ls -1'            # long list
 alias la='ls -lA'           # show hidden files
 alias laf='ls -a | grep "^\."'          # hidden files only
 alias lad='ls -ad .* | grep / | more -p'        # hidden directories only
-alias ll="ls -lA | egrep '^l'"                    # list symlinked files
+alias ll="ls -l"
 alias lt='ls -ltr'            # sort by date
 alias lm='ls -al |more'           # pipe through 'more'
 alias ld="ls -l | egrep '^d'"
@@ -59,6 +59,9 @@ alias nst='netstat -anf inet'
 alias less='less --RAW-CONTROL-CHARS'
 alias muz='mux' # To protect against typo
 alias tmuz='tmux' # To protect against typo
+alias hgrep='history | grep'
+alias java6='/usr/libexec/java_home -v 1.6'
+alias java7='/usr/libexec/java_home -v 1.7'
 
 # Processes
 # ---------

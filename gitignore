@@ -12,3 +12,7 @@ bin
 .rbenv-version
 *.class
 *.iml
+__init__.py
+r.sh
+foo.py
+original.hql
